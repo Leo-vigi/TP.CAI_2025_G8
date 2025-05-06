@@ -8,18 +8,27 @@ using System.Threading.Tasks;
 namespace Persistencia.DataBase
 {
     public class DataBaseUtils
+        
     {
-        string archivoCsv = @"C:\Users\Diego\OneDrive - Económicas - UBA\Escritorio\cuervovigi\Uba ciclo profesional\CAI\TP CAI\TPIntegradorCorto-master\TPIntegradorCorto-master\TemplateTPCorto\Persistencia\DataBase\Tablas";
+        string archivoCsv = @"G:\CAI\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\";
+
+        //Método para Buscar Registro
         public List<String> BuscarRegistro(String nombreArchivo)
         {
-            archivoCsv = archivoCsv + nombreArchivo; // Cambia esta ruta al archivo CSV que deseas leer
+            string rutaArchivo = Path.Combine(@"G:\CAI\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\", nombreArchivo);
 
-            String rutaArchivo = Path.GetFullPath(archivoCsv); // Normaliza la ruta
+            Console.WriteLine($" Buscando archivo en: {rutaArchivo}"); // Depuración
 
             List<String> listado = new List<String>();
 
             try
             {
+                if (!File.Exists(rutaArchivo))
+                {
+                    Console.WriteLine($" Archivo no encontrado: {rutaArchivo}");
+                    return listado;
+                }
+
                 using (StreamReader sr = new StreamReader(rutaArchivo))
                 {
                     string linea;
@@ -31,7 +40,7 @@ namespace Persistencia.DataBase
             }
             catch (Exception e)
             {
-                Console.WriteLine("No se pudo leer el archivo:");
+                Console.WriteLine(" No se pudo leer el archivo:");
                 Console.WriteLine(e.Message);
             }
             return listado;
@@ -56,7 +65,7 @@ namespace Persistencia.DataBase
                 // Leer el archivo y obtener las líneas
                 List<string> listado = BuscarRegistro(nombreArchivo);
 
-                // Filtrar las líneas que no coinciden con el ID a borrar (comparar solo la primera columna)
+                // Filtrar las líneas que no coinciden con el ID a borrar 
                 var registrosRestantes = listado.Where(linea =>
                 {
                     var campos = linea.Split(';');
@@ -76,35 +85,42 @@ namespace Persistencia.DataBase
             }
         }
 
-        // Método para agregar un registro
+        
+
         public void AgregarRegistro(string nombreArchivo, string nuevoRegistro)
         {
-            string archivoCsv = Path.Combine(Directory.GetCurrentDirectory(), "Persistencia", "Datos", nombreArchivo);
+            string rutaArchivo = Path.Combine(@"G:\CAI\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\", nombreArchivo);
 
             try
             {
-                // Verificar si el archivo existe
-                if (!File.Exists(archivoCsv))
+                Console.WriteLine($"✍ Escribiendo en archivo: {rutaArchivo}");
+
+                // Verificar si el archivo existe; si no, agregar la cabecera
+                if (!File.Exists(rutaArchivo))
                 {
-                    Console.WriteLine("El archivo no existe: " + archivoCsv);
-                    return;
+                    using (StreamWriter sw = new StreamWriter(rutaArchivo, true))
+                    {
+                        sw.WriteLine("legajo"); // Cabecera del archivo
+                    }
                 }
 
-                // Abrir el archivo y agregar el nuevo registro
-                using (StreamWriter sw = new StreamWriter(archivoCsv, append: true))
+                // Escribir el nuevo registro
+                using (StreamWriter sw = new StreamWriter(rutaArchivo, true))
                 {
-                    sw.WriteLine(nuevoRegistro); // Agregar la nueva línea
+                    sw.WriteLine(nuevoRegistro);
                 }
 
-                Console.WriteLine("Registro agregado correctamente.");
+                Console.WriteLine(" Registro agregado correctamente.");
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al intentar agregar el registro:");
+                Console.WriteLine(" Error al intentar agregar el registro:");
                 Console.WriteLine($"Mensaje: {e.Message}");
                 Console.WriteLine($"Pila de errores: {e.StackTrace}");
             }
         }
+
+
 
     }
 }

@@ -16,11 +16,127 @@ namespace Persistencia
             List<String> registros = dataBaseUtils.BuscarRegistro(username);
 
             Credencial credencial = new Credencial(registros[0]);
-            if (registros.Count == 0)
-            {
-                throw new Exception("No se encontró el usuario especificado.");
-            }
             return credencial;
         }
+
+
+
+        //Método para obtener la credencial
+
+        DataBaseUtils dataBaseUtils = new DataBaseUtils();
+
+        public Credencial ObtenerCredencial(string username)
+        {
+            List<string> registros = dataBaseUtils.BuscarRegistro("credenciales.csv");
+
+            if (registros.Count == 0)
+            {
+                Console.WriteLine(" Archivo credenciales.csv vacío o no encontrado.");
+                return null;
+            }
+
+            foreach (string registro in registros.Skip(1)) // Omitimos la primera línea (cabecera)
+            {
+                Credencial credencial = new Credencial(registro);
+                Console.WriteLine($" Comparando usuario: [{credencial.NombreUsuario}] vs [{username}]");
+
+                if (credencial.NombreUsuario.Trim().Equals(username.Trim(), StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine($" Usuario encontrado: {credencial.NombreUsuario}");
+                    return credencial;
+                }
+            }
+
+            Console.WriteLine(" Usuario no encontrado en credenciales.csv.");
+            return null;
+        }
+
+        public bool EstaBloqueado(string username)
+        {
+            List<string> bloqueados = dataBaseUtils.BuscarRegistro("usuario_bloqueado.csv");
+
+            Console.WriteLine($" Verificando si {username} está bloqueado...");
+
+            return bloqueados.Skip(1).Any(l => l.Trim() == ObtenerCredencial(username)?.Legajo);
+        }
+
+        public void RegistrarIntentoFallido(string username)
+        {
+            Credencial credencial = ObtenerCredencial(username);
+            if (credencial != null)
+            {
+                string legajo = credencial.Legajo;
+                string fechaIntento = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+                Console.WriteLine($" Registrando intento fallido: {legajo};{fechaIntento}");
+
+                dataBaseUtils.AgregarRegistro("login_intentos.csv", $"{legajo};{fechaIntento}");
+            }
+            else
+            {
+                Console.WriteLine(" No se pudo registrar el intento porque no se encontró la credencial.");
+            }
+        }
+
+        public int ObtenerIntentos(string username)
+        {
+            Credencial credencial = ObtenerCredencial(username);
+            if (credencial == null) return 0;
+
+            string legajo = credencial.Legajo;
+            List<string> intentos = dataBaseUtils.BuscarRegistro("login_intentos.csv");
+
+            // Filtramos intentos por legajo
+            int contador = intentos.Skip(1) // Omitimos la cabecera
+                .Count(linea => linea.StartsWith(legajo + ";"));
+
+            Console.WriteLine($" Intentos fallidos del usuario {legajo}: {contador}");
+            return contador;
+        }
+
+        public void LimpiarIntentos(string username)
+        {
+            Credencial credencial = ObtenerCredencial(username);
+            if (credencial == null) return;
+
+            string legajo = credencial.Legajo;
+            Console.WriteLine($" Limpiando intentos de usuario {legajo}");
+            dataBaseUtils.BorrarRegistro(legajo, "login_intentos.csv");
+        }
+
+        public void BloquearUsuario(string username)
+        {
+            Credencial credencial = ObtenerCredencial(username);
+            if (credencial != null)
+            {
+                string legajo = credencial.Legajo;
+                Console.WriteLine($" Intentando bloquear usuario con legajo: {legajo}");
+
+                // Obtuvimos registros existentes en usuario_bloqueado.csv
+                List<string> registrosBloqueados = dataBaseUtils.BuscarRegistro("usuario_bloqueado.csv");
+
+                // Verificamos si el legajo ya está bloqueado antes de agregarlo
+                if (!registrosBloqueados.Contains(legajo))
+                {
+                    dataBaseUtils.AgregarRegistro("usuario_bloqueado.csv", legajo);
+                    Console.WriteLine($" Usuario {legajo} bloqueado correctamente.");
+                }
+                else
+                {
+                    Console.WriteLine($" Usuario {legajo} ya estaba bloqueado, no se duplica.");
+                }
+            }
+            else
+            {
+                Console.WriteLine(" No se pudo bloquear usuario porque no se encontró la credencial.");
+            }
+        }
+
+
+
+
     }
+
+
 }
+
