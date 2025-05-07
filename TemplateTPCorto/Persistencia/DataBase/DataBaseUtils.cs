@@ -10,22 +10,22 @@ namespace Persistencia.DataBase
     public class DataBaseUtils
         
     {
-        string archivoCsv = @"G:\CAI\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\";
+        string archivoCsv = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Carpeta del primer Commit\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
 
         //Método para Buscar Registro
-        public List<String> BuscarRegistro(String nombreArchivo)
+        public List<string> BuscarRegistro(string nombreArchivo)
         {
-            string rutaArchivo = Path.Combine(@"G:\CAI\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\", nombreArchivo);
+            string rutaArchivo = Path.Combine(@"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Persistencia\DataBase", nombreArchivo);
 
-            Console.WriteLine($" Buscando archivo en: {rutaArchivo}"); // Depuración
+            Console.WriteLine($"Buscando archivo en: {rutaArchivo}");
 
-            List<String> listado = new List<String>();
+            List<string> listado = new List<string>();
 
             try
             {
-                if (!File.Exists(rutaArchivo))
+                if (!File.Exists(rutaArchivo)) // 🔹 Corrección: Negación en la condición
                 {
-                    Console.WriteLine($" Archivo no encontrado: {rutaArchivo}");
+                    Console.WriteLine($"Archivo no encontrado: {rutaArchivo}");
                     return listado;
                 }
 
@@ -34,15 +34,17 @@ namespace Persistencia.DataBase
                     string linea;
                     while ((linea = sr.ReadLine()) != null)
                     {
+                        Console.WriteLine($"Línea leída: {linea}"); // 🔹 Depuración
                         listado.Add(linea);
                     }
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(" No se pudo leer el archivo:");
-                Console.WriteLine(e.Message);
+                Console.WriteLine("Error al leer el archivo:");
+                Console.WriteLine($"Mensaje: {e.Message}");
             }
+
             return listado;
         }
 
@@ -89,7 +91,8 @@ namespace Persistencia.DataBase
 
         public void AgregarRegistro(string nombreArchivo, string nuevoRegistro)
         {
-            string rutaArchivo = Path.Combine(@"G:\CAI\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\", nombreArchivo);
+            string rutaArchivo = Path.Combine(@"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Carpeta del primer Commit\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas"
+, nombreArchivo);
 
             try
             {

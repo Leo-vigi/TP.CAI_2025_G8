@@ -18,23 +18,38 @@ namespace TemplateTPCorto
         {
             InitializeComponent();
         }
-
+        private string usuarioAutenticado;
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            String usuario = txtUsuario.Text;
-            String password = txtPassword.Text;
-
-            //LoginNegocio loginNegocio = new LoginNegocio();
-            //Credencial credencial = loginNegocio.login(usuario, password);
-
+            string usuario = txtUsuario.Text;
+            string password = txtPassword.Text;
 
             LoginNegocio loginNegocio = new LoginNegocio();
             string resultado = loginNegocio.IntentarLogin(usuario, password);
 
-            MessageBox.Show(resultado, "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
+            if (resultado == "Login exitoso") // Ajusta esto según tu sistema
+            {
+                usuarioAutenticado = usuario; // Guarda el usuario autenticado
+                MessageBox.Show("Bienvenido, " + usuarioAutenticado, "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+       
         }
+
+        private void buttonCambiarcontraenlogin_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            Formcambiarcontraseña formCambio = new Formcambiarcontraseña(usuarioAutenticado);
+            formCambio.ShowDialog();
+            this.Show(); // vuelve a mostrarlo una vez cerrado el formcambiarcontraseña
+        }
+
+
+
     }
+}
 }

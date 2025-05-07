@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Persistencia
 {
@@ -131,8 +132,37 @@ namespace Persistencia
                 Console.WriteLine(" No se pudo bloquear usuario porque no se encontró la credencial.");
             }
         }
+        public void ActualizarContrasena(string usuario, string nuevaContrasena)
+        {
+            List<string> registros = dataBaseUtils.BuscarRegistro("credenciales.csv");
+            if (registros.Count == 0) return;
 
+            for (int i = 1; i < registros.Count; i++) // Omitimos la cabecera
+            {
+                string[] campos = registros[i].Split(';');
+                if (campos[1].Trim().Equals(usuario.Trim(), StringComparison.OrdinalIgnoreCase))
+                {
+                    campos[2] = nuevaContrasena;
+                    campos[4] = DateTime.Now.ToString("d/M/yyyy");
+                    registros[i] = string.Join(";", campos);
+                    break;
+                }
+            }
 
+            string rutaArchivo = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Persistencia\DataBase\credenciales.csv";
+
+            try
+            {
+                File.WriteAllLines(rutaArchivo, registros);
+                Console.WriteLine("Contraseña actualizada correctamente.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al escribir el archivo: {ex.Message}");
+            }
+        }
+
+     
 
 
     }

@@ -33,6 +33,11 @@ namespace Datos
 
 
         }
+        public bool ContrasenaExpirada()
+        {
+            return (DateTime.Now - _fechaUltimoLogin).TotalDays >= 30;
+        }
+
 
     }
 }
