@@ -24,9 +24,13 @@ namespace TemplateTPCorto
 
         private void buttoncambiar_Click(object sender, EventArgs e)
         {
-            string contraseñaActual = textBoxContraactual.Text;
-            string nuevaContraseña = textBoxcontranueva.Text;
-            string repetirContraseña = textBoxrepetircontra.Text;
+            string contraseñaActual = textBoxContraactual.Text.Trim();
+            string nuevaContraseña = textBoxcontranueva.Text.Trim();
+            string repetirContraseña = textBoxrepetircontra.Text.Trim();
+
+            Console.WriteLine($"Contraseña actual: {contraseñaActual}");
+            Console.WriteLine($"Nueva contraseña: {nuevaContraseña}");
+            Console.WriteLine($"Repetir contraseña: {repetirContraseña}");
 
             if (!nuevaContraseña.Equals(repetirContraseña))
             {

@@ -149,7 +149,7 @@ namespace Persistencia
                 }
             }
 
-            string rutaArchivo = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Persistencia\DataBase\credenciales.csv";
+            string rutaArchivo = @"G:\CAI\V1\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\credenciales.csv";
 
             try
             {

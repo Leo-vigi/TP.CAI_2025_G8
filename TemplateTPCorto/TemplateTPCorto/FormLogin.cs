@@ -27,18 +27,41 @@ namespace TemplateTPCorto
             LoginNegocio loginNegocio = new LoginNegocio();
             string resultado = loginNegocio.IntentarLogin(usuario, password);
 
-            if (resultado == "Login exitoso") // Ajusta esto según tu sistema
+            if (resultado == "Login exitoso")
             {
-                usuarioAutenticado = usuario; // Guarda el usuario autenticado
+                usuarioAutenticado = usuario;
                 MessageBox.Show("Bienvenido, " + usuarioAutenticado, "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                try
+                {
+                    // Abre FormUsuario
+                    //MessageBox.Show("Creando instancia de FormUsuario...");
+                    FormUsuario formUsuario = new FormUsuario(usuario);
+                    this.Hide();
+                    formUsuario.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al abrir Formulario de Usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else if (resultado == "FORZAR_CAMBIO_CONTRASEÑA")
+            {
+                MessageBox.Show("Tu contraseña ha expirado. Debes actualizarla.", "Cambio Obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Formcambiarcontraseña formCambio = new Formcambiarcontraseña(usuario);
+                this.Hide();
+                formCambio.ShowDialog();
+                this.Show();
             }
             else
             {
                 MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-       
+
         }
 
+        //No se usa en el form Login, ya que se esta usando en el Form Usuario
         private void buttonCambiarcontraenlogin_Click(object sender, EventArgs e)
         {
 
@@ -52,4 +75,4 @@ namespace TemplateTPCorto
 
     }
 }
-}
+
