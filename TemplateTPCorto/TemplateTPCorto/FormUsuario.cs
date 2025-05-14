@@ -13,15 +13,37 @@ namespace TemplateTPCorto
     public partial class FormUsuario : Form
     {
         //Este form se carga cuando el usuario ingreso exitosamente y tiene un login de menos de 30 dias
-
         private string usuarioAutenticado;
-        public FormUsuario(string usuario)
-        {
-            InitializeComponent();
-            usuarioAutenticado = usuario;
-            //MessageBox.Show("FormUsuario se cargo correctamente");
-        }
+        private string perfilUsuario;
 
+        public FormUsuario(string usuario, string perfil)
+        {
+            
+            usuarioAutenticado = usuario;
+            perfilUsuario = perfil;
+
+            ConfigurarPermisos();
+        }
+        private void ConfigurarPermisos()
+        {
+            if (string.IsNullOrEmpty(perfilUsuario))
+            {
+                MessageBox.Show("Error: No se pudo determinar el perfil del usuario.");
+                return;
+            }
+
+            switch (perfilUsuario.Trim().ToLower())
+            {
+                case "supervisor":
+                    buttonModificarPersona.Enabled = true;
+                    buttonDesbloquearCredencial.Enabled = true;
+                    break;
+                default:
+                    buttonModificarPersona.Enabled = false;
+                    buttonDesbloquearCredencial.Enabled = false;
+                    break;
+            }
+        }
         //Fue hecho para test del load form del usuario
         private void FormUsuario_Load(object sender, EventArgs e)
         {
@@ -38,5 +60,24 @@ namespace TemplateTPCorto
             this.Show(); // Vuelve a mostrar FormUsuario después del cambio
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormUsuario_Load_1(object sender, EventArgs e)
+        {
+
+        }
+        private void buttonDesbloquearCredencial_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void buttonModificarPersona_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
-}
+    }
+

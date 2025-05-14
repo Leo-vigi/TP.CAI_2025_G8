@@ -69,8 +69,27 @@ namespace Negocio
            
             // Si el usuario ingresa correctamente en el tercer intento, limpiamos el registro de intentos fallidos
             usuarioPersistencia.LimpiarIntentos(usuario);
-            return " Login exitoso.";
+            string perfil = ObtenerPerfil(usuario);
+            return $"Login exitoso;Perfil:{perfil}";
+
         }
+
+        // : Método para obtener el perfil del usuario
+        public string ObtenerPerfil(string usuario)
+        {
+            List<string> registros = usuarioPersistencia.BuscarRegistro("usuario_perfil.csv");
+
+            foreach (string registro in registros.Skip(1)) // Omitimos cabecera
+            {
+                string[] datos = registro.Split(';'); // Ejemplo: "12345;Supervisor"
+                if (datos[0].Trim().Equals(usuario.Trim(), StringComparison.OrdinalIgnoreCase))
+                {
+                    return datos[1]; // Retorna el perfil del usuario
+                }
+            }
+            return "SinPerfil"; // Si no se encuentra, retorna un valor por defecto
+        }
+
         /*public string CambiarContraseña(string usuario, string contrasenaActual, string nuevaContrasena)
         {
             Credencial credencial = usuarioPersistencia.ObtenerCredencial(usuario);
@@ -125,6 +144,7 @@ namespace Negocio
 
             return "Contraseña actualizada correctamente.";
         }
+        
 
 
     }

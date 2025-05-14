@@ -19,7 +19,11 @@ namespace Persistencia
             Credencial credencial = new Credencial(registros[0]);
             return credencial;
         }
-
+        public List<string> BuscarRegistro(string nombreArchivo)
+        {
+            DataBaseUtils dataBaseUtils = new DataBaseUtils();
+            return dataBaseUtils.BuscarRegistro(nombreArchivo);
+        }
 
 
         //Método para obtener la credencial
@@ -149,7 +153,7 @@ namespace Persistencia
                 }
             }
 
-            string rutaArchivo = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Carpeta DEFINITIVA segundo commit\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
+            string rutaArchivo = @"C:\Users\Tobias\Desktop\CAI4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
 
             try
             {

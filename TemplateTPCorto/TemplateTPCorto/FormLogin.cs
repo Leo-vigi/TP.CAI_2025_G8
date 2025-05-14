@@ -14,6 +14,7 @@ namespace TemplateTPCorto
 {
     public partial class FormLogin : Form
     {
+
         public FormLogin()
         {
             InitializeComponent();
@@ -36,7 +37,8 @@ namespace TemplateTPCorto
                 {
                     // Abre FormUsuario
                     //MessageBox.Show("Creando instancia de FormUsuario...");
-                    FormUsuario formUsuario = new FormUsuario(usuario);
+                    string perfil = loginNegocio.ObtenerPerfil(usuario);
+                    FormUsuario formUsuario = new FormUsuario(usuario, perfil);
                     this.Hide();
                     formUsuario.Show();
                 }
@@ -81,8 +83,10 @@ namespace TemplateTPCorto
             this.Show(); // vuelve a mostrarlo una vez cerrado el formcambiarcontraseña
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
 

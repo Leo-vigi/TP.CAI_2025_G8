@@ -10,12 +10,12 @@ namespace Persistencia.DataBase
     public class DataBaseUtils
         
     {
-        string archivoCsv = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Carpeta DEFINITIVA segundo commit\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
+        string archivoCsv = @"C:\Users\Tobias\Desktop\CAI4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
 
         //Método para Buscar Registro
         public List<string> BuscarRegistro(string nombreArchivo)
         {
-            string rutaArchivo = Path.Combine(@"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Carpeta DEFINITIVA segundo commit\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", nombreArchivo);
+            string rutaArchivo = Path.Combine(@"C:\Users\Tobias\Desktop\CAI4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", nombreArchivo);
 
             Console.WriteLine($"Buscando archivo en: {rutaArchivo}");
 
@@ -91,7 +91,7 @@ namespace Persistencia.DataBase
 
         public void AgregarRegistro(string nombreArchivo, string nuevoRegistro)
         {
-            string rutaArchivo = Path.Combine(@"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Carpeta DEFINITIVA segundo commit\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", nombreArchivo);
+            string rutaArchivo = Path.Combine(@"C:\Users\C:\Users\Tobias\Desktop\CAI4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", nombreArchivo);
 
             try
             {

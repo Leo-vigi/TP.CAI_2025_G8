@@ -51,6 +51,7 @@
             this.label1.Size = new System.Drawing.Size(322, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario autenticado exitosamente y con login de menos de 30 dias";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -60,7 +61,6 @@
             this.label2.Size = new System.Drawing.Size(157, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "¿Desea cambiar la contraseña?";
-            
             // 
             // FormUsuario
             // 
@@ -72,6 +72,7 @@
             this.Controls.Add(this.buttonCambiarcontraenlogin);
             this.Name = "FormUsuario";
             this.Text = "FormUsuario";
+            this.Load += new System.EventHandler(this.FormUsuario_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,5 +83,9 @@
         private System.Windows.Forms.Button buttonCambiarcontraenlogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonModificarPersona;
+        private System.Windows.Forms.Button buttonDesbloquearCredencial;
+
+        
     }
 }
