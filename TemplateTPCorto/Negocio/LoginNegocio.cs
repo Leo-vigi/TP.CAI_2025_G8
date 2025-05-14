@@ -54,6 +54,12 @@ namespace Negocio
                
                 return $" Credenciales incorrectas. Intentos restantes: {3 - intentos}";
             }
+            // 🔹 NUEVO: Validación de primer login (si `fechaUltimoLogin` está vacío)
+            if (credencial.FechaUltimoLogin == DateTime.MinValue)
+            {
+                return "PRIMER_LOGIN";
+            }
+
 
             // Verifica la expiración de contraseña
             if (credencial.ContrasenaExpirada())

@@ -44,7 +44,17 @@ namespace TemplateTPCorto
                 {
                     MessageBox.Show($"Error al abrir Formulario de Usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+               
 
+            }
+            if (resultado == "PRIMER_LOGIN")
+            {
+                MessageBox.Show("Este es su primer login, cambie su contraseña.", "Primer acceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Formcambiarcontraseña formCambio = new Formcambiarcontraseña(usuario);
+                this.Hide();
+                formCambio.ShowDialog();
+                this.Show();
+                return;
             }
             else if (resultado == "FORZAR_CAMBIO_CONTRASEÑA")
             {
