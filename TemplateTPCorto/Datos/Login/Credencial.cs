@@ -30,14 +30,15 @@ namespace Datos
             this._contrasena = datos[2];
             this._fechaAlta = DateTime.ParseExact(datos[3], "d/M/yyyy", CultureInfo.InvariantCulture);
             //this._fechaUltimoLogin = DateTime.ParseExact(datos[4], "d/M/yyyy", CultureInfo.InvariantCulture);
-            if (!string.IsNullOrWhiteSpace(datos[4]))
+            if (!string.IsNullOrWhiteSpace(datos[4].Trim()))
             {
-                this._fechaUltimoLogin = DateTime.ParseExact(datos[4], "d/M/yyyy", CultureInfo.InvariantCulture);
+                this._fechaUltimoLogin = DateTime.ParseExact(datos[4].Trim(), "d/M/yyyy", CultureInfo.InvariantCulture);
             }
             else
             {
-                this._fechaUltimoLogin = DateTime.MinValue; // Asigna un valor mínimo si está vacío
+                this._fechaUltimoLogin = DateTime.MinValue;
             }
+
 
 
         }

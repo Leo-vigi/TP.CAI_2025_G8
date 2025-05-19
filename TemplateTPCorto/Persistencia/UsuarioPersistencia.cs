@@ -146,19 +146,29 @@ namespace Persistencia
                 string[] campos = registros[i].Split(';');
                 if (campos[1].Trim().Equals(usuario.Trim(), StringComparison.OrdinalIgnoreCase))
                 {
-                    campos[2] = nuevaContrasena;
-                    campos[4] = DateTime.Now.ToString("d/M/yyyy");
+                    campos[2] = nuevaContrasena.Trim(); // 🔹 Actualiza la contraseña
+                    campos[4] = DateTime.Now.ToString("d/M/yyyy"); // 🔹 Actualiza fechaUltimoLogin
                     registros[i] = string.Join(";", campos);
                     break;
                 }
             }
 
-            string rutaArchivo = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Carpeta DEFINITIVA segundo commit\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase";
+            string rutaArchivo = Path.Combine(@"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", "credenciales.csv");
 
             try
             {
-                File.WriteAllLines(rutaArchivo, registros);
-                Console.WriteLine("Contraseña actualizada correctamente.");
+                Console.WriteLine($"Verificando archivo: {rutaArchivo}");
+                Console.WriteLine($"Archivo existe: {File.Exists(rutaArchivo)}");
+                using (FileStream fs = new FileStream(rutaArchivo, FileMode.Create, FileAccess.Write, FileShare.None))
+                using (StreamWriter sw = new StreamWriter(fs))
+                {
+                    foreach (string linea in registros)
+                    {
+                        sw.WriteLine(linea);
+                    }
+                }
+                Console.WriteLine("Contraseña y fecha de último login actualizadas correctamente.");
+
             }
             catch (Exception ex)
             {
@@ -166,7 +176,8 @@ namespace Persistencia
             }
         }
 
-     
+
+
 
 
     }

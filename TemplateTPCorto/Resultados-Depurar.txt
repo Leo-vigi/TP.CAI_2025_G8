@@ -1,0 +1,204 @@
+﻿'TemplateTPCorto.exe' (CLR v4.0.30319: DefaultDomain): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'TemplateTPCorto.exe' (CLR v4.0.30319: DefaultDomain): 'C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\TemplateTPCorto\bin\Debug\TemplateTPCorto.exe' cargado. Símbolos cargados.
+'TemplateTPCorto.exe' (CLR v4.0.30319: TemplateTPCorto.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'TemplateTPCorto.exe' (CLR v4.0.30319: TemplateTPCorto.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'TemplateTPCorto.exe' (CLR v4.0.30319: TemplateTPCorto.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'TemplateTPCorto.exe' (CLR v4.0.30319: TemplateTPCorto.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'TemplateTPCorto.exe' (CLR v4.0.30319: TemplateTPCorto.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'TemplateTPCorto.exe' (CLR v4.0.30319: TemplateTPCorto.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'TemplateTPCorto.exe' (CLR v4.0.30319: TemplateTPCorto.exe): 'C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\TemplateTPCorto\bin\Debug\Negocio.dll' cargado. Símbolos cargados.
+'TemplateTPCorto.exe' (CLR v4.0.30319: TemplateTPCorto.exe): 'C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\TemplateTPCorto\bin\Debug\Persistencia.dll' cargado. Símbolos cargados.
+'TemplateTPCorto.exe' (CLR v4.0.30319: TemplateTPCorto.exe): 'C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\TemplateTPCorto\bin\Debug\Datos.dll' cargado. Símbolos cargados.
+Buscando archivo en: C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\usuario_bloqueado.csv
+Existe archivo: True
+Línea leída: legajo
+Línea leída: 2034
+Línea leída: 2945
+Total de líneas cargadas: 3
+ Verificando si brandon.morrison está bloqueado...
+Buscando archivo en: C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\credenciales.csv
+Existe archivo: True
+Línea leída: legajo;nombreUsuario;contrasena;fechaAlta;fechaUltimoLogin
+Línea leída: 2034;zachary.mills;+OEDT#4j97;21/05/2021;10/05/2024
+Línea leída: 1500;gloria.washington;&YtT+7OtkT;31/03/2024;24/02/2025
+Línea leída: 5343;timothy.harrison;qO@m7!Oz&P;06/09/2023;18/12/2024
+Línea leída: 7976;michaela.banks;)sC2(Ee@AK;04/09/2022;16/01/2025
+Línea leída: 2191;sean.parker;u6BLDOBc!U;11/07/2021;02/11/2024
+Línea leída: 2316;craig.haynes;1xg0I(+u)X;04/04/2021;14/01/2025
+Línea leída: 2448;taylor.reynolds;^0YFuIq)+r;27/05/2021;20/11/2025
+Línea leída: 2376;brandon.morrison;h9HH$hs0*3;18/05/2025;
+Línea leída: 3018;james.marsh;uw1E#bxu^b;29/09/2021;17/05/2025
+Línea leída: 2945;monica.mitchell;$*h0TGOn&#;23/11/2022;10/05/2025
+Línea leída: 2314;leonel.vigilante;leonel123;23/11/2023;14/05/2025
+Línea leída: 2315;joaquin.pi?eyro;joaquin123;23/11/2024;14/05/2025
+Línea leída: 2316;tobias.itzcovich;tobias123;24/11/2022;14/05/2025
+Línea leída: 2317;franco.cardaci;franco123;26/11/2022;14/05/2025
+Total de líneas cargadas: 15
+ Comparando usuario: [zachary.mills] vs [brandon.morrison]
+ Comparando usuario: [gloria.washington] vs [brandon.morrison]
+ Comparando usuario: [timothy.harrison] vs [brandon.morrison]
+ Comparando usuario: [michaela.banks] vs [brandon.morrison]
+ Comparando usuario: [sean.parker] vs [brandon.morrison]
+ Comparando usuario: [craig.haynes] vs [brandon.morrison]
+ Comparando usuario: [taylor.reynolds] vs [brandon.morrison]
+ Comparando usuario: [brandon.morrison] vs [brandon.morrison]
+ Usuario encontrado: brandon.morrison
+Buscando archivo en: C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\credenciales.csv
+Existe archivo: True
+Línea leída: legajo;nombreUsuario;contrasena;fechaAlta;fechaUltimoLogin
+Línea leída: 2034;zachary.mills;+OEDT#4j97;21/05/2021;10/05/2024
+Línea leída: 1500;gloria.washington;&YtT+7OtkT;31/03/2024;24/02/2025
+Línea leída: 5343;timothy.harrison;qO@m7!Oz&P;06/09/2023;18/12/2024
+Línea leída: 7976;michaela.banks;)sC2(Ee@AK;04/09/2022;16/01/2025
+Línea leída: 2191;sean.parker;u6BLDOBc!U;11/07/2021;02/11/2024
+Línea leída: 2316;craig.haynes;1xg0I(+u)X;04/04/2021;14/01/2025
+Línea leída: 2448;taylor.reynolds;^0YFuIq)+r;27/05/2021;20/11/2025
+Línea leída: 2376;brandon.morrison;h9HH$hs0*3;18/05/2025;
+Línea leída: 3018;james.marsh;uw1E#bxu^b;29/09/2021;17/05/2025
+Línea leída: 2945;monica.mitchell;$*h0TGOn&#;23/11/2022;10/05/2025
+Línea leída: 2314;leonel.vigilante;leonel123;23/11/2023;14/05/2025
+Línea leída: 2315;joaquin.pi?eyro;joaquin123;23/11/2024;14/05/2025
+Línea leída: 2316;tobias.itzcovich;tobias123;24/11/2022;14/05/2025
+Línea leída: 2317;franco.cardaci;franco123;26/11/2022;14/05/2025
+Total de líneas cargadas: 15
+ Comparando usuario: [zachary.mills] vs [brandon.morrison]
+ Comparando usuario: [gloria.washington] vs [brandon.morrison]
+ Comparando usuario: [timothy.harrison] vs [brandon.morrison]
+ Comparando usuario: [michaela.banks] vs [brandon.morrison]
+ Comparando usuario: [sean.parker] vs [brandon.morrison]
+ Comparando usuario: [craig.haynes] vs [brandon.morrison]
+ Comparando usuario: [taylor.reynolds] vs [brandon.morrison]
+ Comparando usuario: [brandon.morrison] vs [brandon.morrison]
+ Usuario encontrado: brandon.morrison
+Buscando archivo en: C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\credenciales.csv
+Existe archivo: True
+Línea leída: legajo;nombreUsuario;contrasena;fechaAlta;fechaUltimoLogin
+Línea leída: 2034;zachary.mills;+OEDT#4j97;21/05/2021;10/05/2024
+Línea leída: 1500;gloria.washington;&YtT+7OtkT;31/03/2024;24/02/2025
+Línea leída: 5343;timothy.harrison;qO@m7!Oz&P;06/09/2023;18/12/2024
+Línea leída: 7976;michaela.banks;)sC2(Ee@AK;04/09/2022;16/01/2025
+Línea leída: 2191;sean.parker;u6BLDOBc!U;11/07/2021;02/11/2024
+Línea leída: 2316;craig.haynes;1xg0I(+u)X;04/04/2021;14/01/2025
+Línea leída: 2448;taylor.reynolds;^0YFuIq)+r;27/05/2021;20/11/2025
+Línea leída: 2376;brandon.morrison;h9HH$hs0*3;18/05/2025;
+Línea leída: 3018;james.marsh;uw1E#bxu^b;29/09/2021;17/05/2025
+Línea leída: 2945;monica.mitchell;$*h0TGOn&#;23/11/2022;10/05/2025
+Línea leída: 2314;leonel.vigilante;leonel123;23/11/2023;14/05/2025
+Línea leída: 2315;joaquin.pi?eyro;joaquin123;23/11/2024;14/05/2025
+Línea leída: 2316;tobias.itzcovich;tobias123;24/11/2022;14/05/2025
+Línea leída: 2317;franco.cardaci;franco123;26/11/2022;14/05/2025
+Total de líneas cargadas: 15
+ Comparando usuario: [zachary.mills] vs [brandon.morrison]
+ Comparando usuario: [gloria.washington] vs [brandon.morrison]
+ Comparando usuario: [timothy.harrison] vs [brandon.morrison]
+ Comparando usuario: [michaela.banks] vs [brandon.morrison]
+ Comparando usuario: [sean.parker] vs [brandon.morrison]
+ Comparando usuario: [craig.haynes] vs [brandon.morrison]
+ Comparando usuario: [taylor.reynolds] vs [brandon.morrison]
+ Comparando usuario: [brandon.morrison] vs [brandon.morrison]
+ Usuario encontrado: brandon.morrison
+Contraseña actual: h9HH$hs0*3
+Nueva contraseña: pipi1234
+Repetir contraseña: pipi12
+Contraseña actual: h9HH$hs0*3
+Nueva contraseña: pipi1234
+Repetir contraseña: pipi1234
+Buscando archivo en: C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\credenciales.csv
+Existe archivo: True
+Línea leída: legajo;nombreUsuario;contrasena;fechaAlta;fechaUltimoLogin
+Línea leída: 2034;zachary.mills;+OEDT#4j97;21/05/2021;10/05/2024
+Línea leída: 1500;gloria.washington;&YtT+7OtkT;31/03/2024;24/02/2025
+Línea leída: 5343;timothy.harrison;qO@m7!Oz&P;06/09/2023;18/12/2024
+Línea leída: 7976;michaela.banks;)sC2(Ee@AK;04/09/2022;16/01/2025
+Línea leída: 2191;sean.parker;u6BLDOBc!U;11/07/2021;02/11/2024
+Línea leída: 2316;craig.haynes;1xg0I(+u)X;04/04/2021;14/01/2025
+Línea leída: 2448;taylor.reynolds;^0YFuIq)+r;27/05/2021;20/11/2025
+Línea leída: 2376;brandon.morrison;h9HH$hs0*3;18/05/2025;
+Línea leída: 3018;james.marsh;uw1E#bxu^b;29/09/2021;17/05/2025
+Línea leída: 2945;monica.mitchell;$*h0TGOn&#;23/11/2022;10/05/2025
+Línea leída: 2314;leonel.vigilante;leonel123;23/11/2023;14/05/2025
+Línea leída: 2315;joaquin.pi?eyro;joaquin123;23/11/2024;14/05/2025
+Línea leída: 2316;tobias.itzcovich;tobias123;24/11/2022;14/05/2025
+Línea leída: 2317;franco.cardaci;franco123;26/11/2022;14/05/2025
+Total de líneas cargadas: 15
+ Comparando usuario: [zachary.mills] vs [brandon.morrison]
+ Comparando usuario: [gloria.washington] vs [brandon.morrison]
+ Comparando usuario: [timothy.harrison] vs [brandon.morrison]
+ Comparando usuario: [michaela.banks] vs [brandon.morrison]
+ Comparando usuario: [sean.parker] vs [brandon.morrison]
+ Comparando usuario: [craig.haynes] vs [brandon.morrison]
+ Comparando usuario: [taylor.reynolds] vs [brandon.morrison]
+ Comparando usuario: [brandon.morrison] vs [brandon.morrison]
+ Usuario encontrado: brandon.morrison
+Buscando archivo en: C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\credenciales.csv
+Existe archivo: True
+Línea leída: legajo;nombreUsuario;contrasena;fechaAlta;fechaUltimoLogin
+Línea leída: 2034;zachary.mills;+OEDT#4j97;21/05/2021;10/05/2024
+Línea leída: 1500;gloria.washington;&YtT+7OtkT;31/03/2024;24/02/2025
+Línea leída: 5343;timothy.harrison;qO@m7!Oz&P;06/09/2023;18/12/2024
+Línea leída: 7976;michaela.banks;)sC2(Ee@AK;04/09/2022;16/01/2025
+Línea leída: 2191;sean.parker;u6BLDOBc!U;11/07/2021;02/11/2024
+Línea leída: 2316;craig.haynes;1xg0I(+u)X;04/04/2021;14/01/2025
+Línea leída: 2448;taylor.reynolds;^0YFuIq)+r;27/05/2021;20/11/2025
+Línea leída: 2376;brandon.morrison;h9HH$hs0*3;18/05/2025;
+Línea leída: 3018;james.marsh;uw1E#bxu^b;29/09/2021;17/05/2025
+Línea leída: 2945;monica.mitchell;$*h0TGOn&#;23/11/2022;10/05/2025
+Línea leída: 2314;leonel.vigilante;leonel123;23/11/2023;14/05/2025
+Línea leída: 2315;joaquin.pi?eyro;joaquin123;23/11/2024;14/05/2025
+Línea leída: 2316;tobias.itzcovich;tobias123;24/11/2022;14/05/2025
+Línea leída: 2317;franco.cardaci;franco123;26/11/2022;14/05/2025
+Total de líneas cargadas: 15
+'TemplateTPCorto.exe' (CLR v4.0.30319: TemplateTPCorto.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_es_b77a5c561934e089\mscorlib.resources.dll' cargado. El módulo se compiló sin símbolos.
+Excepción producida: 'System.UnauthorizedAccessException' en mscorlib.dll
+Error al escribir el archivo: Acceso denegado a la ruta de acceso 'C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\credenciales.csv'.
+Contraseña actual: h9HH$hs0*3
+Nueva contraseña: pipi1234
+Repetir contraseña: pipi1234
+Buscando archivo en: C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\credenciales.csv
+Existe archivo: True
+Línea leída: legajo;nombreUsuario;contrasena;fechaAlta;fechaUltimoLogin
+Línea leída: 2034;zachary.mills;+OEDT#4j97;21/05/2021;10/05/2024
+Línea leída: 1500;gloria.washington;&YtT+7OtkT;31/03/2024;24/02/2025
+Línea leída: 5343;timothy.harrison;qO@m7!Oz&P;06/09/2023;18/12/2024
+Línea leída: 7976;michaela.banks;)sC2(Ee@AK;04/09/2022;16/01/2025
+Línea leída: 2191;sean.parker;u6BLDOBc!U;11/07/2021;02/11/2024
+Línea leída: 2316;craig.haynes;1xg0I(+u)X;04/04/2021;14/01/2025
+Línea leída: 2448;taylor.reynolds;^0YFuIq)+r;27/05/2021;20/11/2025
+Línea leída: 2376;brandon.morrison;h9HH$hs0*3;18/05/2025;
+Línea leída: 3018;james.marsh;uw1E#bxu^b;29/09/2021;17/05/2025
+Línea leída: 2945;monica.mitchell;$*h0TGOn&#;23/11/2022;10/05/2025
+Línea leída: 2314;leonel.vigilante;leonel123;23/11/2023;14/05/2025
+Línea leída: 2315;joaquin.pi?eyro;joaquin123;23/11/2024;14/05/2025
+Línea leída: 2316;tobias.itzcovich;tobias123;24/11/2022;14/05/2025
+Línea leída: 2317;franco.cardaci;franco123;26/11/2022;14/05/2025
+Total de líneas cargadas: 15
+ Comparando usuario: [zachary.mills] vs [brandon.morrison]
+ Comparando usuario: [gloria.washington] vs [brandon.morrison]
+ Comparando usuario: [timothy.harrison] vs [brandon.morrison]
+ Comparando usuario: [michaela.banks] vs [brandon.morrison]
+ Comparando usuario: [sean.parker] vs [brandon.morrison]
+ Comparando usuario: [craig.haynes] vs [brandon.morrison]
+ Comparando usuario: [taylor.reynolds] vs [brandon.morrison]
+ Comparando usuario: [brandon.morrison] vs [brandon.morrison]
+ Usuario encontrado: brandon.morrison
+Buscando archivo en: C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\credenciales.csv
+Existe archivo: True
+Línea leída: legajo;nombreUsuario;contrasena;fechaAlta;fechaUltimoLogin
+Línea leída: 2034;zachary.mills;+OEDT#4j97;21/05/2021;10/05/2024
+Línea leída: 1500;gloria.washington;&YtT+7OtkT;31/03/2024;24/02/2025
+Línea leída: 5343;timothy.harrison;qO@m7!Oz&P;06/09/2023;18/12/2024
+Línea leída: 7976;michaela.banks;)sC2(Ee@AK;04/09/2022;16/01/2025
+Línea leída: 2191;sean.parker;u6BLDOBc!U;11/07/2021;02/11/2024
+Línea leída: 2316;craig.haynes;1xg0I(+u)X;04/04/2021;14/01/2025
+Línea leída: 2448;taylor.reynolds;^0YFuIq)+r;27/05/2021;20/11/2025
+Línea leída: 2376;brandon.morrison;h9HH$hs0*3;18/05/2025;
+Línea leída: 3018;james.marsh;uw1E#bxu^b;29/09/2021;17/05/2025
+Línea leída: 2945;monica.mitchell;$*h0TGOn&#;23/11/2022;10/05/2025
+Línea leída: 2314;leonel.vigilante;leonel123;23/11/2023;14/05/2025
+Línea leída: 2315;joaquin.pi?eyro;joaquin123;23/11/2024;14/05/2025
+Línea leída: 2316;tobias.itzcovich;tobias123;24/11/2022;14/05/2025
+Línea leída: 2317;franco.cardaci;franco123;26/11/2022;14/05/2025
+Total de líneas cargadas: 15
+Excepción producida: 'System.UnauthorizedAccessException' en mscorlib.dll
+Error al escribir el archivo: Acceso denegado a la ruta de acceso 'C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\credenciales.csv'.
+El programa '[23896] TemplateTPCorto.exe' terminó con código 0 (0x0).

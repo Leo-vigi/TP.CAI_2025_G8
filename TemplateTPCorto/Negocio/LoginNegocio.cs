@@ -31,54 +31,48 @@ namespace Negocio
         public string IntentarLogin(string usuario, string password)
         {
             if (usuarioPersistencia.EstaBloqueado(usuario))
-                return " El usuario está bloqueado. No puede ingresar.";
+                return "El usuario está bloqueado. No puede ingresar.";
 
             Credencial credencial = usuarioPersistencia.ObtenerCredencial(usuario);
             if (credencial == null)
-                return " Usuario no encontrado.";
-
-            
-            
+                return "Usuario no encontrado.";
 
             if (!credencial.Contrasena.Equals(password))
             {
                 usuarioPersistencia.RegistrarIntentoFallido(usuario);
                 int intentos = usuarioPersistencia.ObtenerIntentos(usuario);
-                
 
                 if (intentos >= 3)
                 {
                     usuarioPersistencia.BloquearUsuario(usuario);
-                    return " Usuario bloqueado por demasiados intentos fallidos.";
+                    return "Usuario bloqueado por demasiados intentos fallidos.";
                 }
-               
-                return $" Credenciales incorrectas. Intentos restantes: {3 - intentos}";
+
+                return $"Credenciales incorrectas. Intentos restantes: {3 - intentos}";
             }
-            // 🔹 NUEVO: Validación de primer login (si `fechaUltimoLogin` está vacío)
+
+            // 🔹 Corrección: Si `fechaUltimoLogin` está vacío, el flujo se detiene y retorna `PRIMER_LOGIN`
             if (credencial.FechaUltimoLogin == DateTime.MinValue)
             {
-                return "PRIMER_LOGIN";
+                return "PRIMER_LOGIN"; // ✅ Ahora debería detectarlo bien
             }
 
             Console.WriteLine($"Días desde último login: {(DateTime.Now - credencial.FechaUltimoLogin).TotalDays}");
-            // Verifica la expiración de contraseña
+
+            // 🔹 Ahora `ContrasenaExpirada()` solo se ejecuta si `fechaUltimoLogin` no está vacío
             if (credencial.ContrasenaExpirada())
             {
                 return "FORZAR_CAMBIO_CONTRASEÑA";
             }
 
-            // Si el usuario ingresa correctamente en el tercer intento, limpiamos el registro de intentos fallidos
-            // 🔹 Validar perfil después del login
-            else
-            {
-                UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
-                string perfil = usuarioNegocio.AutenticarYRedirigir(usuario, password);
-                return perfil != "SinPerfil" ? $"Login exitoso;Perfil:{perfil}" : "El usuario no tiene un perfil válido.";
-            }
-    }
+            UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+            string perfil = usuarioNegocio.AutenticarYRedirigir(usuario, password);
+            return perfil != "SinPerfil" ? $"Login exitoso;Perfil:{perfil}" : "El usuario no tiene un perfil válido.";
+        }
 
-    // : Método para obtener el perfil del usuario
-    public string ObtenerPerfil(string usuario)
+
+        // : Método para obtener el perfil del usuario
+        public string ObtenerPerfil(string usuario)
         {
             List<string> registros = usuarioPersistencia.BuscarRegistro("usuario_perfil.csv");
 

@@ -10,20 +10,21 @@ namespace Persistencia.DataBase
     public class DataBaseUtils
         
     {
-        string archivoCsv = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Carpeta DEFINITIVA segundo commit\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase";
+        string archivoCsv = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
 
         //Método para Buscar Registro
         public List<string> BuscarRegistro(string nombreArchivo)
         {
-            string rutaArchivo = Path.Combine(@"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Carpeta DEFINITIVA segundo commit\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase", nombreArchivo);
+            string rutaArchivo = Path.Combine(@"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", nombreArchivo);
 
             Console.WriteLine($"Buscando archivo en: {rutaArchivo}");
+            Console.WriteLine($"Existe archivo: {File.Exists(rutaArchivo)}");
 
             List<string> listado = new List<string>();
 
             try
             {
-                if (!File.Exists(rutaArchivo)) // 🔹 Corrección: Negación en la condición
+                if (!File.Exists(rutaArchivo))
                 {
                     Console.WriteLine($"Archivo no encontrado: {rutaArchivo}");
                     return listado;
@@ -34,7 +35,7 @@ namespace Persistencia.DataBase
                     string linea;
                     while ((linea = sr.ReadLine()) != null)
                     {
-                        Console.WriteLine($"Línea leída: {linea}"); // 🔹 Depuración
+                        Console.WriteLine($"Línea leída: {linea}");
                         listado.Add(linea);
                     }
                 }
@@ -45,8 +46,10 @@ namespace Persistencia.DataBase
                 Console.WriteLine($"Mensaje: {e.Message}");
             }
 
+            Console.WriteLine($"Total de líneas cargadas: {listado.Count}");
             return listado;
         }
+
 
         // Método para borrar un registro
         public void BorrarRegistro(string id, String nombreArchivo)
@@ -91,7 +94,7 @@ namespace Persistencia.DataBase
 
         public void AgregarRegistro(string nombreArchivo, string nuevoRegistro)
         {
-            string rutaArchivo = Path.Combine(@"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\Carpeta DEFINITIVA segundo commit\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase", nombreArchivo);
+            string rutaArchivo = Path.Combine(@"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", nombreArchivo);
 
             try
             {

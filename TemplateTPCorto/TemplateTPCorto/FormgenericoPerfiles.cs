@@ -82,7 +82,7 @@ namespace TemplateTPCorto
                     formDesbloquear.ShowDialog();
                     break;
                 case "Autorizaciones":
-                    FormAutorizaciones formAutorizaciones = new FormAutorizaciones();
+                    FormAutorizaciones formAutorizaciones = new FormAutorizaciones(perfil);
                     formAutorizaciones.ShowDialog();
                     break;
                 default:
