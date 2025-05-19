@@ -60,22 +60,25 @@ namespace Negocio
                 return "PRIMER_LOGIN";
             }
 
-
+            Console.WriteLine($"Días desde último login: {(DateTime.Now - credencial.FechaUltimoLogin).TotalDays}");
             // Verifica la expiración de contraseña
             if (credencial.ContrasenaExpirada())
             {
                 return "FORZAR_CAMBIO_CONTRASEÑA";
             }
-           
+
             // Si el usuario ingresa correctamente en el tercer intento, limpiamos el registro de intentos fallidos
-            usuarioPersistencia.LimpiarIntentos(usuario);
-            string perfil = ObtenerPerfil(usuario);
-            return $"Login exitoso;Perfil:{perfil}";
+            // 🔹 Validar perfil después del login
+            else
+            {
+                UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+                string perfil = usuarioNegocio.AutenticarYRedirigir(usuario, password);
+                return perfil != "SinPerfil" ? $"Login exitoso;Perfil:{perfil}" : "El usuario no tiene un perfil válido.";
+            }
+    }
 
-        }
-
-        // : Método para obtener el perfil del usuario
-        public string ObtenerPerfil(string usuario)
+    // : Método para obtener el perfil del usuario
+    public string ObtenerPerfil(string usuario)
         {
             List<string> registros = usuarioPersistencia.BuscarRegistro("usuario_perfil.csv");
 

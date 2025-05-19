@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -78,6 +79,24 @@ namespace TemplateTPCorto
         {
             
         }
+
+        private void Nocambiar_Click(object sender, EventArgs e)
+        {
+            // ✅ No es necesario volver a obtener el perfil desde `UsuarioNegocio`
+            // ya que `perfilUsuario` ya fue pasado correctamente desde `FormLogin`.
+
+            if (string.IsNullOrEmpty(perfilUsuario))
+            {
+                MessageBox.Show("Error: No se pudo determinar el perfil del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // ✅ Redirigir a FormGenericoperfiles con usuario y perfil
+            FormgenericoPerfiles formGenerico = new FormgenericoPerfiles(usuarioAutenticado, perfilUsuario);
+            this.Hide();
+            formGenerico.Show();
+        }
+
     }
-    }
+}
 

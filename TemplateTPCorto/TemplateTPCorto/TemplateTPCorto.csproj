@@ -46,17 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDesbloquearCredencial.cs">
+    <Compile Include="FormAutorizaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDesbloquearCredencial.Designer.cs">
-      <DependentUpon>FormDesbloquearCredencial.cs</DependentUpon>
+    <Compile Include="FormAutorizaciones.Designer.cs">
+      <DependentUpon>FormAutorizaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormModificarPersona.cs">
+    <Compile Include="FormDesbloquearcredencial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormModificarPersona.Designer.cs">
-      <DependentUpon>FormModificarPersona.cs</DependentUpon>
+    <Compile Include="FormDesbloquearcredencial.Designer.cs">
+      <DependentUpon>FormDesbloquearcredencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormgenericoPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormgenericoPerfiles.Designer.cs">
+      <DependentUpon>FormgenericoPerfiles.cs</DependentUpon>
     </Compile>
     <Compile Include="Formcambiarcontraseña.cs">
       <SubType>Form</SubType>
@@ -70,6 +76,12 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormModificarPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificarPersona.Designer.cs">
+      <DependentUpon>FormModificarPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,8 +90,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAutorizaciones.resx">
+      <DependentUpon>FormAutorizaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formcambiarcontraseña.resx">
       <DependentUpon>Formcambiarcontraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDesbloquearcredencial.resx">
+      <DependentUpon>FormDesbloquearcredencial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormgenericoPerfiles.resx">
+      <DependentUpon>FormgenericoPerfiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
