@@ -44,6 +44,13 @@ namespace TemplateTPCorto
 
             MessageBox.Show(resultado, "Cambio de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            if (resultado == "Contraseña actualizada correctamente.")
+            {
+                this.Hide();  // 🔹 Oculta `FormCambiarContraseña`
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();  // 🔹 Muestra `FormLogin` nuevamente
+                this.Close();  // 🔹 Cierra el formulario actual
+            }
 
         }
 
