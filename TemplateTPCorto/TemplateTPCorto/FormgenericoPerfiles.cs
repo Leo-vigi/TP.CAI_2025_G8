@@ -91,6 +91,11 @@ namespace TemplateTPCorto
                     break;
             }
         }
+
+        private void FormgenericoPerfiles_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

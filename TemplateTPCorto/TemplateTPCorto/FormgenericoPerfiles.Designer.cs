@@ -38,41 +38,46 @@
             // lblPerfil
             // 
             this.lblPerfil.AutoSize = true;
-            this.lblPerfil.Location = new System.Drawing.Point(29, 21);
+            this.lblPerfil.Location = new System.Drawing.Point(19, 14);
+            this.lblPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPerfil.Name = "lblPerfil";
-            this.lblPerfil.Size = new System.Drawing.Size(51, 20);
+            this.lblPerfil.Size = new System.Drawing.Size(35, 13);
             this.lblPerfil.TabIndex = 0;
             this.lblPerfil.Text = "label1";
             // 
             // labelperfil
             // 
             this.labelperfil.AutoSize = true;
-            this.labelperfil.Location = new System.Drawing.Point(144, 106);
+            this.labelperfil.Location = new System.Drawing.Point(96, 69);
+            this.labelperfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelperfil.Name = "labelperfil";
-            this.labelperfil.Size = new System.Drawing.Size(48, 20);
+            this.labelperfil.Size = new System.Drawing.Size(33, 13);
             this.labelperfil.TabIndex = 1;
             this.labelperfil.Text = "Perfil:";
             // 
             // txtPerfil
             // 
-            this.txtPerfil.Location = new System.Drawing.Point(210, 100);
+            this.txtPerfil.Location = new System.Drawing.Point(140, 65);
+            this.txtPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPerfil.Name = "txtPerfil";
-            this.txtPerfil.Size = new System.Drawing.Size(165, 26);
+            this.txtPerfil.Size = new System.Drawing.Size(111, 20);
             this.txtPerfil.TabIndex = 3;
             // 
             // comboBoxAcciones
             // 
             this.comboBoxAcciones.FormattingEnabled = true;
-            this.comboBoxAcciones.Location = new System.Drawing.Point(210, 164);
+            this.comboBoxAcciones.Location = new System.Drawing.Point(140, 107);
+            this.comboBoxAcciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxAcciones.Name = "comboBoxAcciones";
-            this.comboBoxAcciones.Size = new System.Drawing.Size(165, 28);
+            this.comboBoxAcciones.Size = new System.Drawing.Size(111, 21);
             this.comboBoxAcciones.TabIndex = 4;
             // 
             // btnAcceder
             // 
-            this.btnAcceder.Location = new System.Drawing.Point(209, 252);
+            this.btnAcceder.Location = new System.Drawing.Point(139, 164);
+            this.btnAcceder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAcceder.Name = "btnAcceder";
-            this.btnAcceder.Size = new System.Drawing.Size(165, 30);
+            this.btnAcceder.Size = new System.Drawing.Size(110, 20);
             this.btnAcceder.TabIndex = 5;
             this.btnAcceder.Text = "Acceder";
             this.btnAcceder.UseVisualStyleBackColor = true;
@@ -80,16 +85,18 @@
             // 
             // FormgenericoPerfiles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.comboBoxAcciones);
             this.Controls.Add(this.txtPerfil);
             this.Controls.Add(this.labelperfil);
             this.Controls.Add(this.lblPerfil);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormgenericoPerfiles";
             this.Text = "FormgenericoPerfiles";
+            this.Load += new System.EventHandler(this.FormgenericoPerfiles_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -14,7 +14,7 @@ namespace Negocio
         public string AutenticarYRedirigir(string nombreUsuario, string password)
         {
             // 🔹 Ruta base asegurada para evitar errores de búsqueda en bin\Debug
-            string rutaBase = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
+            string rutaBase = @"C:\Users\Usuario\Desktop\Punto 4 final\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
 
             string rutaCredenciales = Path.Combine(rutaBase, "credenciales.csv");
             string rutaUsuarioPerfil = Path.Combine(rutaBase, "usuario_perfil.csv");

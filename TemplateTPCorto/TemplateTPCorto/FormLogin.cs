@@ -28,6 +28,20 @@ namespace TemplateTPCorto
             LoginNegocio loginNegocio = new LoginNegocio();
             string resultado = loginNegocio.IntentarLogin(usuario, password);
 
+            if (resultado == "FORZAR_CAMBIO_CONTRASEÑA")  // 🔥 Verificamos si el usuario debe cambiar la contraseña
+            {
+                MessageBox.Show("Debes cambiar tu contraseña antes de continuar.", "Cambio Obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Formcambiarcontraseña formCambio = new Formcambiarcontraseña(usuario);
+                this.Hide();
+                formCambio.ShowDialog();
+                this.Show();
+                return;
+            }
+
+
+
+
+
             if (resultado.StartsWith("Redirigir a FormGenericoperfiles con perfil:"))
             {
                 usuarioAutenticado = usuario;
@@ -68,6 +82,11 @@ namespace TemplateTPCorto
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
         {
 
         }

@@ -47,6 +47,7 @@
             this.buttonCancelar.TabIndex = 0;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttoncambiar
             // 
@@ -131,6 +132,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Formcambiarcontraseña";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Formcambiarcontraseña_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

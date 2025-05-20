@@ -153,7 +153,7 @@ namespace Persistencia
                 }
             }
 
-            string rutaArchivo = Path.Combine(@"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", "credenciales.csv");
+            string rutaArchivo = Path.Combine(@"C:\Users\Usuario\Desktop\Punto 4 final\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", "credenciales.csv");
 
             try
             {

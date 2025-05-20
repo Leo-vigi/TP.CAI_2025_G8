@@ -56,5 +56,15 @@ namespace TemplateTPCorto
         {
 
         }
+
+        private void Formcambiarcontraseña_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

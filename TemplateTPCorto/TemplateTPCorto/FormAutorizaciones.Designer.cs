@@ -40,18 +40,20 @@
             // 
             // btnpersona
             // 
-            this.btnpersona.Location = new System.Drawing.Point(12, 349);
+            this.btnpersona.Location = new System.Drawing.Point(8, 227);
+            this.btnpersona.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnpersona.Name = "btnpersona";
-            this.btnpersona.Size = new System.Drawing.Size(277, 29);
+            this.btnpersona.Size = new System.Drawing.Size(185, 19);
             this.btnpersona.TabIndex = 0;
             this.btnpersona.Text = "Aprobar modificaciones persona";
             this.btnpersona.UseVisualStyleBackColor = true;
             // 
             // btncredenciales
             // 
-            this.btncredenciales.Location = new System.Drawing.Point(482, 349);
+            this.btncredenciales.Location = new System.Drawing.Point(321, 227);
+            this.btncredenciales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btncredenciales.Name = "btncredenciales";
-            this.btncredenciales.Size = new System.Drawing.Size(292, 29);
+            this.btncredenciales.Size = new System.Drawing.Size(195, 19);
             this.btncredenciales.TabIndex = 1;
             this.btncredenciales.Text = "Aprobar modificaciones credenciales";
             this.btncredenciales.UseVisualStyleBackColor = true;
@@ -59,62 +61,66 @@
             // listBoxpersona
             // 
             this.listBoxpersona.FormattingEnabled = true;
-            this.listBoxpersona.ItemHeight = 20;
-            this.listBoxpersona.Location = new System.Drawing.Point(44, 40);
+            this.listBoxpersona.Location = new System.Drawing.Point(29, 26);
+            this.listBoxpersona.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxpersona.Name = "listBoxpersona";
-            this.listBoxpersona.Size = new System.Drawing.Size(244, 184);
+            this.listBoxpersona.Size = new System.Drawing.Size(164, 121);
             this.listBoxpersona.TabIndex = 2;
             // 
             // listBoxcredenciales
             // 
             this.listBoxcredenciales.FormattingEnabled = true;
-            this.listBoxcredenciales.ItemHeight = 20;
-            this.listBoxcredenciales.Location = new System.Drawing.Point(500, 40);
+            this.listBoxcredenciales.Location = new System.Drawing.Point(333, 26);
+            this.listBoxcredenciales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxcredenciales.Name = "listBoxcredenciales";
-            this.listBoxcredenciales.Size = new System.Drawing.Size(244, 184);
+            this.listBoxcredenciales.Size = new System.Drawing.Size(164, 121);
             this.listBoxcredenciales.TabIndex = 3;
             // 
             // btncancelarpersona
             // 
-            this.btncancelarpersona.Location = new System.Drawing.Point(26, 399);
+            this.btncancelarpersona.Location = new System.Drawing.Point(17, 259);
+            this.btncancelarpersona.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btncancelarpersona.Name = "btncancelarpersona";
-            this.btncancelarpersona.Size = new System.Drawing.Size(262, 29);
+            this.btncancelarpersona.Size = new System.Drawing.Size(175, 19);
             this.btncancelarpersona.TabIndex = 4;
             this.btncancelarpersona.Text = "Cancelar cambios persona";
             this.btncancelarpersona.UseVisualStyleBackColor = true;
             // 
             // btncancelarcredenciales
             // 
-            this.btncancelarcredenciales.Location = new System.Drawing.Point(482, 399);
+            this.btncancelarcredenciales.Location = new System.Drawing.Point(321, 259);
+            this.btncancelarcredenciales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btncancelarcredenciales.Name = "btncancelarcredenciales";
-            this.btncancelarcredenciales.Size = new System.Drawing.Size(262, 29);
+            this.btncancelarcredenciales.Size = new System.Drawing.Size(175, 19);
             this.btncancelarcredenciales.TabIndex = 5;
             this.btncancelarcredenciales.Text = "Cancelar cambios credenciales";
             this.btncancelarcredenciales.UseVisualStyleBackColor = true;
             // 
             // btncargarpersonas
             // 
-            this.btncargarpersonas.Location = new System.Drawing.Point(65, 252);
+            this.btncargarpersonas.Location = new System.Drawing.Point(43, 164);
+            this.btncargarpersonas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btncargarpersonas.Name = "btncargarpersonas";
-            this.btncargarpersonas.Size = new System.Drawing.Size(209, 40);
+            this.btncargarpersonas.Size = new System.Drawing.Size(139, 26);
             this.btncargarpersonas.TabIndex = 6;
             this.btncargarpersonas.Text = "Cargar solicitudes";
             this.btncargarpersonas.UseVisualStyleBackColor = true;
             // 
             // btncargarcredenciales
             // 
-            this.btncargarcredenciales.Location = new System.Drawing.Point(535, 252);
+            this.btncargarcredenciales.Location = new System.Drawing.Point(357, 164);
+            this.btncargarcredenciales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btncargarcredenciales.Name = "btncargarcredenciales";
-            this.btncargarcredenciales.Size = new System.Drawing.Size(209, 40);
+            this.btncargarcredenciales.Size = new System.Drawing.Size(139, 26);
             this.btncargarcredenciales.TabIndex = 7;
             this.btncargarcredenciales.Text = "Cargar solicitudes";
             this.btncargarcredenciales.UseVisualStyleBackColor = true;
             // 
             // FormAutorizaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.btncargarcredenciales);
             this.Controls.Add(this.btncargarpersonas);
             this.Controls.Add(this.btncancelarcredenciales);
@@ -123,8 +129,10 @@
             this.Controls.Add(this.listBoxpersona);
             this.Controls.Add(this.btncredenciales);
             this.Controls.Add(this.btnpersona);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormAutorizaciones";
             this.Text = "FormAutorizaciones";
+            this.Load += new System.EventHandler(this.FormAutorizaciones_Load);
             this.ResumeLayout(false);
 
         }

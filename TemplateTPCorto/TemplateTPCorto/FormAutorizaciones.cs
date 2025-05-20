@@ -14,7 +14,7 @@ namespace TemplateTPCorto
     public partial class FormAutorizaciones : Form
     {
         // Ruta base donde se encuentran todos los archivos CSV.
-        private readonly string basePath = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
+        private readonly string basePath = @"C:\Users\Usuario\Desktop\Punto 4 final\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
         private string perfilUsuario;
 
         public FormAutorizaciones(string perfil)
@@ -238,6 +238,11 @@ namespace TemplateTPCorto
             MessageBox.Show("Solicitudes de credenciales canceladas.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
+
+        private void FormAutorizaciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

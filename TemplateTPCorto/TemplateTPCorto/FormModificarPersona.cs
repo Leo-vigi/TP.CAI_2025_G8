@@ -40,7 +40,7 @@ namespace TemplateTPCorto
         private void CargarDatosPersona()
         {
             string legajo = txtlegajo.Text.Trim();
-            string rutaPersona = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\persona.csv";
+            string rutaPersona = @"C:\Users\Usuario\Desktop\Punto 4 final\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\persona.csv";
 
             if (!File.Exists(rutaPersona))
             {
@@ -77,7 +77,7 @@ namespace TemplateTPCorto
 
             string legajoModificado = txtlegajo.Text.Trim();
             // Usamos la ruta donde están los CSV, según la que indicas:
-            string rutaOperaciones = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\operacion_cambio_persona.csv";
+            string rutaOperaciones = @"C:\Users\Usuario\Desktop\Punto 4 final\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas\operacion_cambio_persona.csv";
 
             if (legajoModificado != legajoActual)
             {
@@ -124,6 +124,11 @@ namespace TemplateTPCorto
                 MessageBox.Show("Error al guardar la solicitud: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine("❌ Error: " + ex.ToString());
             }
+        }
+
+        private void FormModificarPersona_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

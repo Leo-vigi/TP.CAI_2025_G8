@@ -20,7 +20,7 @@ namespace TemplateTPCorto
         private string fechaAltaActual;
 
         // Ruta base donde se encuentran todos los archivos CSV.
-        private readonly string basePath = @"C:\Users\Diego\Documents\Repo cai\TP.CAI_2025_G8\CARPETA PUNTO 4\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
+        private readonly string basePath = @"C:\Users\Usuario\Desktop\Punto 4 final\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
 
         public FormDesbloquearcredencial()
         {
@@ -153,6 +153,11 @@ namespace TemplateTPCorto
                 MessageBox.Show("Error al guardar la solicitud: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine("❌ Error: " + ex.ToString());
             }
+        }
+
+        private void FormDesbloquearcredencial_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
