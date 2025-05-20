@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtnueva = new System.Windows.Forms.TextBox();
             this.txtvieja = new System.Windows.Forms.TextBox();
+            this.btncargar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btncambiar
@@ -94,11 +95,21 @@
             this.txtvieja.Size = new System.Drawing.Size(125, 26);
             this.txtvieja.TabIndex = 6;
             // 
+            // btncargar
+            // 
+            this.btncargar.Location = new System.Drawing.Point(379, 49);
+            this.btncargar.Name = "btncargar";
+            this.btncargar.Size = new System.Drawing.Size(129, 32);
+            this.btncargar.TabIndex = 7;
+            this.btncargar.Text = "Cargar datos";
+            this.btncargar.UseVisualStyleBackColor = true;
+            // 
             // FormDesbloquearcredencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btncargar);
             this.Controls.Add(this.txtvieja);
             this.Controls.Add(this.txtnueva);
             this.Controls.Add(this.label3);
@@ -122,5 +133,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtnueva;
         private System.Windows.Forms.TextBox txtvieja;
+        private System.Windows.Forms.Button btncargar;
     }
 }

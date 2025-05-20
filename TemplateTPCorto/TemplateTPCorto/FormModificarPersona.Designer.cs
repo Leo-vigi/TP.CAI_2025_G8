@@ -39,6 +39,7 @@
             this.txtdni = new System.Windows.Forms.TextBox();
             this.txtfechaing = new System.Windows.Forms.TextBox();
             this.btncambiar = new System.Windows.Forms.Button();
+            this.btnCargar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtnombre
@@ -130,11 +131,21 @@
             this.btncambiar.Text = "Cambiar";
             this.btncambiar.UseVisualStyleBackColor = true;
             // 
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(368, 59);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(145, 35);
+            this.btnCargar.TabIndex = 22;
+            this.btnCargar.Text = "Cargar datos";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            // 
             // FormModificarPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 501);
+            this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btncambiar);
             this.Controls.Add(this.txtfechaing);
             this.Controls.Add(this.txtdni);
@@ -166,5 +177,6 @@
         private System.Windows.Forms.TextBox txtdni;
         private System.Windows.Forms.TextBox txtfechaing;
         private System.Windows.Forms.Button btncambiar;
+        private System.Windows.Forms.Button btnCargar;
     }
 }

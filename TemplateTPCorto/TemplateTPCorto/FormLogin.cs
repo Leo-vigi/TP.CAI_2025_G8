@@ -28,50 +28,34 @@ namespace TemplateTPCorto
             LoginNegocio loginNegocio = new LoginNegocio();
             string resultado = loginNegocio.IntentarLogin(usuario, password);
 
-            if (resultado == "Login exitoso")
+            if (resultado.StartsWith("Redirigir a FormGenericoperfiles con perfil:"))
             {
                 usuarioAutenticado = usuario;
-                MessageBox.Show("Bienvenido, " + usuarioAutenticado, "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string perfil = resultado.Replace("Redirigir a FormGenericoperfiles con perfil:", "").Trim();
+
+                Console.WriteLine($"🔍 En FormLogin - Perfil extraído correctamente: {perfil}");
+
+                MessageBox.Show($"Bienvenido, {usuarioAutenticado}", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 try
                 {
-                    // Abre FormUsuario
-                    //MessageBox.Show("Creando instancia de FormUsuario...");
-                    string perfil = loginNegocio.ObtenerPerfil(usuario);
-                    FormUsuario formUsuario = new FormUsuario(usuario, perfil);
+                    FormUsuario formUsuario = new FormUsuario(usuarioAutenticado, perfil);
                     this.Hide();
-                    formUsuario.Show();
+                    formUsuario.ShowDialog();
+                    this.Show();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al abrir Formulario de Usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error al abrir FormUsuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-               
-
-            }
-            if (resultado == "PRIMER_LOGIN")
-            {
-                MessageBox.Show("Este es su primer login, cambie su contraseña.", "Primer acceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Formcambiarcontraseña formCambio = new Formcambiarcontraseña(usuario);
-                this.Hide();
-                formCambio.ShowDialog();
-                this.Show();
-                return;
-            }
-            else if (resultado == "FORZAR_CAMBIO_CONTRASEÑA")
-            {
-                MessageBox.Show("Tu contraseña ha expirado. Debes actualizarla.", "Cambio Obligatorio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Formcambiarcontraseña formCambio = new Formcambiarcontraseña(usuario);
-                this.Hide();
-                formCambio.ShowDialog();
-                this.Show();
             }
             else
             {
                 MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
+
+
 
         //No se usa en el form Login, ya que se esta usando en el Form Usuario
         private void buttonCambiarcontraenlogin_Click(object sender, EventArgs e)

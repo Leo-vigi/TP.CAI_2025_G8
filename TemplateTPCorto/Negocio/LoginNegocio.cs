@@ -2,6 +2,7 @@
 using Persistencia;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,8 @@ namespace Negocio
 
         public string IntentarLogin(string usuario, string password)
         {
+            UsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+
             if (usuarioPersistencia.EstaBloqueado(usuario))
                 return "El usuario está bloqueado. No puede ingresar.";
 
@@ -51,41 +54,65 @@ namespace Negocio
                 return $"Credenciales incorrectas. Intentos restantes: {3 - intentos}";
             }
 
-            // 🔹 Corrección: Si `fechaUltimoLogin` está vacío, el flujo se detiene y retorna `PRIMER_LOGIN`
+            // ✅ Verificar si el usuario requiere cambio de contraseña
             if (credencial.FechaUltimoLogin == DateTime.MinValue)
-            {
-                return "PRIMER_LOGIN"; // ✅ Ahora debería detectarlo bien
-            }
+                return "PRIMER_LOGIN";
 
-            Console.WriteLine($"Días desde último login: {(DateTime.Now - credencial.FechaUltimoLogin).TotalDays}");
-
-            // 🔹 Ahora `ContrasenaExpirada()` solo se ejecuta si `fechaUltimoLogin` no está vacío
             if (credencial.ContrasenaExpirada())
-            {
                 return "FORZAR_CAMBIO_CONTRASEÑA";
-            }
 
+            // ✅ Obtener el perfil correctamente
             UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
             string perfil = usuarioNegocio.AutenticarYRedirigir(usuario, password);
-            return perfil != "SinPerfil" ? $"Login exitoso;Perfil:{perfil}" : "El usuario no tiene un perfil válido.";
+
+            if (!perfil.StartsWith("Redirigir")) return "Error al obtener el perfil del usuario.";
+
+            Console.WriteLine($"🔍 En LoginNegocio - Perfil obtenido correctamente: {perfil}");
+
+            return perfil;
         }
+
 
 
         // : Método para obtener el perfil del usuario
         public string ObtenerPerfil(string usuario)
         {
-            List<string> registros = usuarioPersistencia.BuscarRegistro("usuario_perfil.csv");
+            string rutaCredenciales = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Persistencia", "DataBase", "credenciales.csv");
+            string rutaUsuarioPerfil = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Persistencia", "DataBase", "usuario_perfil.csv");
+            string rutaPerfil = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Persistencia", "DataBase", "perfil.csv");
 
-            foreach (string registro in registros.Skip(1)) // Omitimos cabecera
-            {
-                string[] datos = registro.Split(';'); // Ejemplo: "12345;Supervisor"
-                if (datos[0].Trim().Equals(usuario.Trim(), StringComparison.OrdinalIgnoreCase))
-                {
-                    return datos[1]; // Retorna el perfil del usuario
-                }
-            }
-            return "SinPerfil"; // Si no se encuentra, retorna un valor por defecto
+            // ✅ Buscar legajo del usuario en credenciales.csv
+            if (!File.Exists(rutaCredenciales)) return "Error: Archivo credenciales.csv no encontrado.";
+            var datosUsuario = File.ReadAllLines(rutaCredenciales).Skip(1)
+                .Select(line => line.Split(';'))
+                .FirstOrDefault(datos => datos[1].Trim().Equals(usuario.Trim(), StringComparison.OrdinalIgnoreCase));
+
+            if (datosUsuario == null) return "Usuario no encontrado.";
+            string legajo = datosUsuario[0].Trim();
+
+            // ✅ Buscar ID de perfil en usuario_perfil.csv
+            if (!File.Exists(rutaUsuarioPerfil)) return "Error: Archivo usuario_perfil.csv no encontrado.";
+            var datosPerfil = File.ReadAllLines(rutaUsuarioPerfil).Skip(1)
+                .Select(line => line.Split(';'))
+                .FirstOrDefault(datos => datos[0].Trim() == legajo);
+
+            if (datosPerfil == null) return "El usuario no tiene un perfil asignado.";
+            string idPerfil = datosPerfil[1].Trim();
+
+            // ✅ Buscar nombre del perfil en perfil.csv
+            if (!File.Exists(rutaPerfil)) return "Error: Archivo perfil.csv no encontrado.";
+            var perfilEncontrado = File.ReadAllLines(rutaPerfil).Skip(1)
+                .Select(line => line.Split(';'))
+                .FirstOrDefault(datos => datos[0].Trim() == idPerfil);
+
+            if (perfilEncontrado == null) return "Perfil no encontrado.";
+            string nombrePerfil = perfilEncontrado[1].Trim();
+
+            Console.WriteLine($"Perfil obtenido correctamente: {nombrePerfil}"); // 🔥 Debug para verificar en consola
+
+            return nombrePerfil; // ✅ Retorna el nombre del perfil en lugar de un ID
         }
+
 
         /*public string CambiarContraseña(string usuario, string contrasenaActual, string nuevaContrasena)
         {

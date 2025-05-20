@@ -34,6 +34,8 @@
             this.listBoxcredenciales = new System.Windows.Forms.ListBox();
             this.btncancelarpersona = new System.Windows.Forms.Button();
             this.btncancelarcredenciales = new System.Windows.Forms.Button();
+            this.btncargarpersonas = new System.Windows.Forms.Button();
+            this.btncargarcredenciales = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnpersona
@@ -58,7 +60,7 @@
             // 
             this.listBoxpersona.FormattingEnabled = true;
             this.listBoxpersona.ItemHeight = 20;
-            this.listBoxpersona.Location = new System.Drawing.Point(44, 114);
+            this.listBoxpersona.Location = new System.Drawing.Point(44, 40);
             this.listBoxpersona.Name = "listBoxpersona";
             this.listBoxpersona.Size = new System.Drawing.Size(244, 184);
             this.listBoxpersona.TabIndex = 2;
@@ -67,7 +69,7 @@
             // 
             this.listBoxcredenciales.FormattingEnabled = true;
             this.listBoxcredenciales.ItemHeight = 20;
-            this.listBoxcredenciales.Location = new System.Drawing.Point(503, 114);
+            this.listBoxcredenciales.Location = new System.Drawing.Point(500, 40);
             this.listBoxcredenciales.Name = "listBoxcredenciales";
             this.listBoxcredenciales.Size = new System.Drawing.Size(244, 184);
             this.listBoxcredenciales.TabIndex = 3;
@@ -90,11 +92,31 @@
             this.btncancelarcredenciales.Text = "Cancelar cambios credenciales";
             this.btncancelarcredenciales.UseVisualStyleBackColor = true;
             // 
+            // btncargarpersonas
+            // 
+            this.btncargarpersonas.Location = new System.Drawing.Point(65, 252);
+            this.btncargarpersonas.Name = "btncargarpersonas";
+            this.btncargarpersonas.Size = new System.Drawing.Size(209, 40);
+            this.btncargarpersonas.TabIndex = 6;
+            this.btncargarpersonas.Text = "Cargar solicitudes";
+            this.btncargarpersonas.UseVisualStyleBackColor = true;
+            // 
+            // btncargarcredenciales
+            // 
+            this.btncargarcredenciales.Location = new System.Drawing.Point(535, 252);
+            this.btncargarcredenciales.Name = "btncargarcredenciales";
+            this.btncargarcredenciales.Size = new System.Drawing.Size(209, 40);
+            this.btncargarcredenciales.TabIndex = 7;
+            this.btncargarcredenciales.Text = "Cargar solicitudes";
+            this.btncargarcredenciales.UseVisualStyleBackColor = true;
+            // 
             // FormAutorizaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btncargarcredenciales);
+            this.Controls.Add(this.btncargarpersonas);
             this.Controls.Add(this.btncancelarcredenciales);
             this.Controls.Add(this.btncancelarpersona);
             this.Controls.Add(this.listBoxcredenciales);
@@ -115,5 +137,7 @@
         private System.Windows.Forms.ListBox listBoxcredenciales;
         private System.Windows.Forms.Button btncancelarpersona;
         private System.Windows.Forms.Button btncancelarcredenciales;
+        private System.Windows.Forms.Button btncargarpersonas;
+        private System.Windows.Forms.Button btncargarcredenciales;
     }
 }

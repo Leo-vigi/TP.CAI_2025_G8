@@ -20,6 +20,7 @@ namespace TemplateTPCorto
             InitializeComponent();
             this.usuario = usuario;
             this.perfil = perfil;
+            Console.WriteLine($"✅ Perfil recibido en FormgenericoPerfiles: {this.perfil}"); // 🔥 Depuración
 
             // ✅ Mensaje de bienvenida en lblPerfil
             lblPerfil.Text = $"Bienvenido {usuario}, tu perfil es: {perfil}";

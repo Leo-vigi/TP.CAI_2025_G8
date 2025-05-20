@@ -14,37 +14,39 @@ namespace TemplateTPCorto
     public partial class FormUsuario : Form
     {
         //Este form se carga cuando el usuario ingreso exitosamente y tiene un login de menos de 30 dias
+        // 🔹 Confirmación de instancia
         private string usuarioAutenticado;
         private string perfilUsuario;
 
         public FormUsuario(string usuario, string perfil)
         {
-            
+            InitializeComponent(); // 🔹 Asegura que los controles están creados antes de usarlos
+            Console.WriteLine("Entrando a FormUsuario");
             usuarioAutenticado = usuario;
             perfilUsuario = perfil;
 
-            ConfigurarPermisos();
+            //ConfigurarPermisos();
         }
-        private void ConfigurarPermisos()
-        {
-            if (string.IsNullOrEmpty(perfilUsuario))
-            {
-                MessageBox.Show("Error: No se pudo determinar el perfil del usuario.");
-                return;
-            }
+        //private void ConfigurarPermisos()
+        //{
+          //  if (string.IsNullOrEmpty(perfilUsuario))
+            //{
+              //  MessageBox.Show("Error: No se pudo determinar el perfil del usuario.");
+                //return;
+            //}
 
-            switch (perfilUsuario.Trim().ToLower())
-            {
-                case "supervisor":
-                    buttonModificarPersona.Enabled = true;
-                    buttonDesbloquearCredencial.Enabled = true;
-                    break;
-                default:
-                    buttonModificarPersona.Enabled = false;
-                    buttonDesbloquearCredencial.Enabled = false;
-                    break;
-            }
-        }
+            //switch (perfilUsuario.Trim().ToLower())
+            //{
+               // case "supervisor":
+                 //   buttonModificarPersona.Enabled = true;
+                   // buttonDesbloquearCredencial.Enabled = true;
+                    //break;
+                //default:
+                  //  buttonModificarPersona.Enabled = false;
+                    //buttonDesbloquearCredencial.Enabled = false;
+                   // break;
+            //}
+        //}
         //Fue hecho para test del load form del usuario
         private void FormUsuario_Load(object sender, EventArgs e)
         {
@@ -82,8 +84,9 @@ namespace TemplateTPCorto
 
         private void Nocambiar_Click(object sender, EventArgs e)
         {
-            // ✅ No es necesario volver a obtener el perfil desde `UsuarioNegocio`
-            // ya que `perfilUsuario` ya fue pasado correctamente desde `FormLogin`.
+            Console.WriteLine($"🔍 Acción: No deseo cambiar contraseña.");
+            Console.WriteLine($"✅ Usuario autenticado: {usuarioAutenticado}");
+            Console.WriteLine($"✅ Perfil del usuario: {perfilUsuario}");
 
             if (string.IsNullOrEmpty(perfilUsuario))
             {
@@ -91,11 +94,18 @@ namespace TemplateTPCorto
                 return;
             }
 
-            // ✅ Redirigir a FormGenericoperfiles con usuario y perfil
+            Console.WriteLine($"🚀 Redirigiendo a FormgenericoPerfiles con usuario: {usuarioAutenticado}, perfil: {perfilUsuario}");
+
+            // ✅ Corrección: Asegurar que FormgenericoPerfiles se muestra como diálogo modal
             FormgenericoPerfiles formGenerico = new FormgenericoPerfiles(usuarioAutenticado, perfilUsuario);
             this.Hide();
-            formGenerico.Show();
+            formGenerico.ShowDialog(); // 🔥 ShowDialog() en lugar de Show() para evitar bloqueos en la navegación
+            this.Show(); // ✅ Vuelve a mostrar FormUsuario después de cerrar FormgenericoPerfiles
         }
+
+
+
+
 
     }
 }
