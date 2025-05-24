@@ -20,15 +20,15 @@ namespace TemplateTPCorto
             InitializeComponent();
             this.usuario = usuario;
             this.perfil = perfil;
-            Console.WriteLine($"✅ Perfil recibido en FormgenericoPerfiles: {this.perfil}"); // 🔥 Depuración
+            Console.WriteLine($" Perfil recibido en FormgenericoPerfiles: {this.perfil}"); 
 
-            // ✅ Mensaje de bienvenida en lblPerfil
+            //  Mensaje de bienvenida en lblPerfil
             lblPerfil.Text = $"Bienvenido {usuario}, tu perfil es: {perfil}";
 
-            // ✅ Mostrar el perfil identificado en el TextBox
+            //  Mostrar el perfil identificado en el TextBox
             txtPerfil.Text = perfil;
 
-            // ✅ Cargar opciones en ComboBox según perfil
+            //  Cargar opciones en ComboBox según perfil
             CargarOpcionesPorPerfil();
         }
 

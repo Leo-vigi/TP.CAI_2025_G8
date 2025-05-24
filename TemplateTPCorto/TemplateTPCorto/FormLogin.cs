@@ -47,7 +47,7 @@ namespace TemplateTPCorto
                 usuarioAutenticado = usuario;
                 string perfil = resultado.Replace("Redirigir a FormGenericoperfiles con perfil:", "").Trim();
 
-                Console.WriteLine($"🔍 En FormLogin - Perfil extraído correctamente: {perfil}");
+                Console.WriteLine($" En FormLogin - Perfil extraído correctamente: {perfil}");
 
                 MessageBox.Show($"Bienvenido, {usuarioAutenticado}", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -67,6 +67,18 @@ namespace TemplateTPCorto
             {
                 MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            string resultadoLogin = loginNegocio.IntentarLogin(usuario, password);
+
+            if (resultadoLogin == "PRIMER_LOGIN")
+            {
+                MessageBox.Show("Este es tu primer inicio de sesión. Debes cambiar tu contraseña.", "Primer Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Hide();
+                Formcambiarcontraseña formCambio = new Formcambiarcontraseña(usuario);
+                formCambio.ShowDialog();
+                this.Show();
+            }
+
         }
 
 
@@ -81,6 +93,8 @@ namespace TemplateTPCorto
             this.Show(); // vuelve a mostrarlo una vez cerrado el formcambiarcontraseña
         }
 
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -92,4 +106,3 @@ namespace TemplateTPCorto
         }
     }
 }
-

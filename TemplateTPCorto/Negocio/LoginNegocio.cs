@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace Negocio
 {
     public class LoginNegocio
@@ -16,7 +17,7 @@ namespace Negocio
         {
             UsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
 
-            Credencial credencial = usuarioPersistencia.login(usuario);
+            Credencial credencial = usuarioPersistencia.Login(usuario);
 
             if (credencial.Contrasena.Equals(password))
             {
@@ -54,20 +55,23 @@ namespace Negocio
                 return $"Credenciales incorrectas. Intentos restantes: {3 - intentos}";
             }
 
-            // ✅ Verificar si el usuario requiere cambio de contraseña
+            //  Verifica si es el primer login y permite acceso
             if (credencial.FechaUltimoLogin == DateTime.MinValue)
                 return "PRIMER_LOGIN";
 
             if (credencial.ContrasenaExpirada())
                 return "FORZAR_CAMBIO_CONTRASEÑA";
 
-            // ✅ Obtener el perfil correctamente
+
+
+
+            //  Obtener el perfil correctamente
             UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
             string perfil = usuarioNegocio.AutenticarYRedirigir(usuario, password);
 
             if (!perfil.StartsWith("Redirigir")) return "Error al obtener el perfil del usuario.";
 
-            Console.WriteLine($"🔍 En LoginNegocio - Perfil obtenido correctamente: {perfil}");
+            Console.WriteLine($" En LoginNegocio - Perfil obtenido correctamente: {perfil}");
 
             return perfil;
         }
@@ -81,7 +85,7 @@ namespace Negocio
             string rutaUsuarioPerfil = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Persistencia", "DataBase", "usuario_perfil.csv");
             string rutaPerfil = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Persistencia", "DataBase", "perfil.csv");
 
-            // ✅ Buscar legajo del usuario en credenciales.csv
+            //  Buscar legajo del usuario en credenciales.csv
             if (!File.Exists(rutaCredenciales)) return "Error: Archivo credenciales.csv no encontrado.";
             var datosUsuario = File.ReadAllLines(rutaCredenciales).Skip(1)
                 .Select(line => line.Split(';'))
@@ -90,7 +94,7 @@ namespace Negocio
             if (datosUsuario == null) return "Usuario no encontrado.";
             string legajo = datosUsuario[0].Trim();
 
-            // ✅ Buscar ID de perfil en usuario_perfil.csv
+            //  Buscar ID de perfil en usuario_perfil.csv
             if (!File.Exists(rutaUsuarioPerfil)) return "Error: Archivo usuario_perfil.csv no encontrado.";
             var datosPerfil = File.ReadAllLines(rutaUsuarioPerfil).Skip(1)
                 .Select(line => line.Split(';'))
@@ -99,7 +103,7 @@ namespace Negocio
             if (datosPerfil == null) return "El usuario no tiene un perfil asignado.";
             string idPerfil = datosPerfil[1].Trim();
 
-            // ✅ Buscar nombre del perfil en perfil.csv
+            //  Buscar nombre del perfil en perfil.csv
             if (!File.Exists(rutaPerfil)) return "Error: Archivo perfil.csv no encontrado.";
             var perfilEncontrado = File.ReadAllLines(rutaPerfil).Skip(1)
                 .Select(line => line.Split(';'))
@@ -110,7 +114,7 @@ namespace Negocio
 
             Console.WriteLine($"Perfil obtenido correctamente: {nombrePerfil}"); // 🔥 Debug para verificar en consola
 
-            return nombrePerfil; // ✅ Retorna el nombre del perfil en lugar de un ID
+            return nombrePerfil; //  Retorna el nombre del perfil en lugar de un ID
         }
 
 
@@ -168,7 +172,7 @@ namespace Negocio
 
             return "Contraseña actualizada correctamente.";
         }
-        
+
 
 
     }

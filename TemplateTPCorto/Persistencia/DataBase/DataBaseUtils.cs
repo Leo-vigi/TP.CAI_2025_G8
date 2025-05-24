@@ -8,124 +8,101 @@ using System.Threading.Tasks;
 namespace Persistencia.DataBase
 {
     public class DataBaseUtils
-        
+
     {
-        string archivoCsv = @"C:\Users\Usuario\Desktop\Punto 4 final\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
-
-        //Método para Buscar Registro
-        public List<string> BuscarRegistro(string nombreArchivo)
+        public static class DatabaseUtils
         {
-            string rutaArchivo = Path.Combine(@"C:\Users\Usuario\Desktop\Punto 4 final\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", nombreArchivo);
+            private static readonly string basePath = @"G:\CAI\V6\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
 
-            Console.WriteLine($"Buscando archivo en: {rutaArchivo}");
-            Console.WriteLine($"Existe archivo: {File.Exists(rutaArchivo)}");
-
-            List<string> listado = new List<string>();
-
-            try
+            public static string GetFilePath(string fileName)
             {
-                if (!File.Exists(rutaArchivo))
-                {
-                    Console.WriteLine($"Archivo no encontrado: {rutaArchivo}");
-                    return listado;
-                }
+                return Path.Combine(basePath, fileName);
+            }
 
-                using (StreamReader sr = new StreamReader(rutaArchivo))
+            public static List<string> BuscarRegistro(string nombreArchivo)
+            {
+                string rutaArchivo = GetFilePath(nombreArchivo);
+                Console.WriteLine($"Buscando archivo en: {rutaArchivo}");
+
+                List<string> listado = new List<string>();
+                try
                 {
-                    string linea;
-                    while ((linea = sr.ReadLine()) != null)
+                    if (!File.Exists(rutaArchivo))
                     {
-                        Console.WriteLine($"Línea leída: {linea}");
-                        listado.Add(linea);
+                        Console.WriteLine($"Archivo no encontrado: {rutaArchivo}");
+                        return listado;
+                    }
+
+                    using (StreamReader sr = new StreamReader(rutaArchivo))
+                    {
+                        string linea;
+                        while ((linea = sr.ReadLine()) != null)
+                        {
+                            listado.Add(linea);
+                        }
                     }
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error al leer el archivo:");
-                Console.WriteLine($"Mensaje: {e.Message}");
-            }
-
-            Console.WriteLine($"Total de líneas cargadas: {listado.Count}");
-            return listado;
-        }
-
-
-        // Método para borrar un registro
-        public void BorrarRegistro(string id, String nombreArchivo)
-        {
-            archivoCsv = archivoCsv + nombreArchivo; // Cambia esta ruta al archivo CSV que deseas leer
-
-            String rutaArchivo = Path.GetFullPath(archivoCsv); // Normaliza la ruta
-
-            try
-            {
-                // Verificar si el archivo existe
-                if (!File.Exists(rutaArchivo))
+                catch (Exception e)
                 {
-                    Console.WriteLine("El archivo no existe: " + archivoCsv);
-                    return;
+                    Console.WriteLine($"Error al leer el archivo: {e.Message}");
                 }
 
-                // Leer el archivo y obtener las líneas
-                List<string> listado = BuscarRegistro(nombreArchivo);
-
-                // Filtrar las líneas que no coinciden con el ID a borrar 
-                var registrosRestantes = listado.Where(linea =>
-                {
-                    var campos = linea.Split(';');
-                    return campos[0] != id; // Verifica solo el ID (primera columna)
-                }).ToList();
-
-                // Sobrescribir el archivo con las líneas restantes
-                File.WriteAllLines(archivoCsv, registrosRestantes);
-
-                Console.WriteLine($"Registro con ID {id} borrado correctamente.");
+                return listado;
             }
-            catch (Exception e)
+
+            public static void BorrarRegistro(string id, string nombreArchivo)
             {
-                Console.WriteLine("Error al intentar borrar el registro:");
-                Console.WriteLine($"Mensaje: {e.Message}");
-                Console.WriteLine($"Pila de errores: {e.StackTrace}");
-            }
-        }
+                string rutaArchivo = GetFilePath(nombreArchivo);
 
-        
-
-        public void AgregarRegistro(string nombreArchivo, string nuevoRegistro)
-        {
-            string rutaArchivo = Path.Combine(@"C:\Users\Usuario\Desktop\Punto 4 final\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas", nombreArchivo);
-
-            try
-            {
-                Console.WriteLine($" Escribiendo en archivo: {rutaArchivo}");
-
-                // Verificar si el archivo existe; si no, agregar la cabecera
-                if (!File.Exists(rutaArchivo))
+                try
                 {
+                    if (!File.Exists(rutaArchivo))
+                    {
+                        Console.WriteLine($"El archivo no existe: {rutaArchivo}");
+                        return;
+                    }
+
+                    List<string> listado = BuscarRegistro(nombreArchivo);
+                    var registrosRestantes = listado.Where(linea => linea.Split(';')[0] != id).ToList();
+
+                    File.WriteAllLines(rutaArchivo, registrosRestantes);
+
+                    Console.WriteLine($"Registro con ID {id} borrado correctamente.");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Error al borrar el registro: {e.Message}");
+                }
+            }
+
+            public static void AgregarRegistro(string nombreArchivo, string nuevoRegistro)
+            {
+                string rutaArchivo = GetFilePath(nombreArchivo);
+
+                try
+                {
+                    Console.WriteLine($"Escribiendo en archivo: {rutaArchivo}");
+
+                    if (!File.Exists(rutaArchivo))
+                    {
+                        using (StreamWriter sw = new StreamWriter(rutaArchivo, true))
+                        {
+                            sw.WriteLine("legajo"); // Cabecera del archivo
+                        }
+                    }
+
                     using (StreamWriter sw = new StreamWriter(rutaArchivo, true))
                     {
-                        sw.WriteLine("legajo"); // Cabecera del archivo
+                        sw.WriteLine(nuevoRegistro);
                     }
-                }
 
-                // Escribir el nuevo registro
-                using (StreamWriter sw = new StreamWriter(rutaArchivo, true))
+                    Console.WriteLine("Registro agregado correctamente.");
+                }
+                catch (Exception e)
                 {
-                    sw.WriteLine(nuevoRegistro);
+                    Console.WriteLine($"Error al agregar el registro: {e.Message}");
                 }
-
-                Console.WriteLine(" Registro agregado correctamente.");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(" Error al intentar agregar el registro:");
-                Console.WriteLine($"Mensaje: {e.Message}");
-                Console.WriteLine($"Pila de errores: {e.StackTrace}");
             }
         }
-
-
-
     }
 }

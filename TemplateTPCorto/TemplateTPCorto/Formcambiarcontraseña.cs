@@ -39,17 +39,17 @@ namespace TemplateTPCorto
             }
 
             LoginNegocio loginNegocio = new LoginNegocio();
-            string usuario = usuarioAutenticado; 
+            string usuario = usuarioAutenticado;
             string resultado = loginNegocio.CambiarContraseña(usuario, contraseñaActual, nuevaContraseña);
 
             MessageBox.Show(resultado, "Cambio de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             if (resultado == "Contraseña actualizada correctamente.")
             {
-                this.Hide();  // 🔹 Oculta `FormCambiarContraseña`
+                this.Hide();  //  Oculta `FormCambiarContraseña`
                 FormLogin formLogin = new FormLogin();
-                formLogin.Show();  // 🔹 Muestra `FormLogin` nuevamente
-                this.Close();  // 🔹 Cierra el formulario actual
+                formLogin.Show();  //  Muestra `FormLogin` nuevamente
+                this.Close();  //  Cierra el formulario actual
             }
 
         }
@@ -75,3 +75,4 @@ namespace TemplateTPCorto
         }
     }
 }
+
