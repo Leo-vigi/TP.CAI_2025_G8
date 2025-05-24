@@ -46,9 +46,7 @@ namespace TemplateTPCorto
                     comboBoxAcciones.Items.Add("Autorizaciones");
                     break;
                 case "operador":
-                    // No agrega ninguna opción
-                    MessageBox.Show("No hay acciones disponibles para el perfil Operador.",
-                                    "Acceso restringido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    comboBoxAcciones.Items.Add("Cargar ventas");
                     break;
                 default:
                     MessageBox.Show("Perfil no reconocido. No tienes acciones disponibles.",
@@ -85,6 +83,10 @@ namespace TemplateTPCorto
                 case "Autorizaciones":
                     FormAutorizaciones formAutorizaciones = new FormAutorizaciones(perfil);
                     formAutorizaciones.ShowDialog();
+                    break;
+                case "Cargar ventas":
+                    FormVentas formventas = new FormVentas();
+                        formventas.ShowDialog();
                     break;
                 default:
                     MessageBox.Show("Opción no válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
