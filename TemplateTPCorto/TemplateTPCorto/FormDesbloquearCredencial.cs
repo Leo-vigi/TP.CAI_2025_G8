@@ -136,6 +136,11 @@ namespace TemplateTPCorto
         {
 
         }
+
+        private void btnvolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
 

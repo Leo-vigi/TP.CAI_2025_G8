@@ -33,6 +33,7 @@
             this.txtPerfil = new System.Windows.Forms.TextBox();
             this.comboBoxAcciones = new System.Windows.Forms.ComboBox();
             this.btnAcceder = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPerfil
@@ -58,7 +59,7 @@
             // txtPerfil
             // 
             this.txtPerfil.Location = new System.Drawing.Point(140, 65);
-            this.txtPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.txtPerfil.Name = "txtPerfil";
             this.txtPerfil.Size = new System.Drawing.Size(111, 20);
             this.txtPerfil.TabIndex = 3;
@@ -67,7 +68,7 @@
             // 
             this.comboBoxAcciones.FormattingEnabled = true;
             this.comboBoxAcciones.Location = new System.Drawing.Point(140, 107);
-            this.comboBoxAcciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxAcciones.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxAcciones.Name = "comboBoxAcciones";
             this.comboBoxAcciones.Size = new System.Drawing.Size(111, 21);
             this.comboBoxAcciones.TabIndex = 4;
@@ -75,7 +76,7 @@
             // btnAcceder
             // 
             this.btnAcceder.Location = new System.Drawing.Point(139, 164);
-            this.btnAcceder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAcceder.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcceder.Name = "btnAcceder";
             this.btnAcceder.Size = new System.Drawing.Size(110, 20);
             this.btnAcceder.TabIndex = 5;
@@ -83,17 +84,28 @@
             this.btnAcceder.UseVisualStyleBackColor = true;
             this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(139, 202);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 25);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FormgenericoPerfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.comboBoxAcciones);
             this.Controls.Add(this.txtPerfil);
             this.Controls.Add(this.labelperfil);
             this.Controls.Add(this.lblPerfil);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormgenericoPerfiles";
             this.Text = "FormgenericoPerfiles";
             this.Load += new System.EventHandler(this.FormgenericoPerfiles_Load);
@@ -109,5 +121,6 @@
         private System.Windows.Forms.TextBox txtPerfil;
         private System.Windows.Forms.ComboBox comboBoxAcciones;
         private System.Windows.Forms.Button btnAcceder;
+        private System.Windows.Forms.Button button1;
     }
 }

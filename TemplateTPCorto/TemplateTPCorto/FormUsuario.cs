@@ -103,9 +103,9 @@ namespace TemplateTPCorto
             this.Show(); //  Vuelve a mostrar FormUsuario después de cerrar FormgenericoPerfiles
         }
 
-
-
-
-
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

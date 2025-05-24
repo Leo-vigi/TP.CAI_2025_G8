@@ -40,12 +40,13 @@
             this.txtfechaing = new System.Windows.Forms.TextBox();
             this.btncambiar = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(94, 77);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(97, 20);
             this.txtnombre.TabIndex = 14;
@@ -53,7 +54,7 @@
             // txtlegajo
             // 
             this.txtlegajo.Location = new System.Drawing.Point(94, 40);
-            this.txtlegajo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtlegajo.Margin = new System.Windows.Forms.Padding(2);
             this.txtlegajo.Name = "txtlegajo";
             this.txtlegajo.Size = new System.Drawing.Size(97, 20);
             this.txtlegajo.TabIndex = 13;
@@ -111,7 +112,7 @@
             // txtapellido
             // 
             this.txtapellido.Location = new System.Drawing.Point(94, 116);
-            this.txtapellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtapellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(97, 20);
             this.txtapellido.TabIndex = 18;
@@ -119,7 +120,7 @@
             // txtdni
             // 
             this.txtdni.Location = new System.Drawing.Point(94, 151);
-            this.txtdni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdni.Margin = new System.Windows.Forms.Padding(2);
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(97, 20);
             this.txtdni.TabIndex = 19;
@@ -127,7 +128,7 @@
             // txtfechaing
             // 
             this.txtfechaing.Location = new System.Drawing.Point(133, 178);
-            this.txtfechaing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtfechaing.Margin = new System.Windows.Forms.Padding(2);
             this.txtfechaing.Name = "txtfechaing";
             this.txtfechaing.Size = new System.Drawing.Size(97, 20);
             this.txtfechaing.TabIndex = 20;
@@ -135,7 +136,7 @@
             // btncambiar
             // 
             this.btncambiar.Location = new System.Drawing.Point(213, 243);
-            this.btncambiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btncambiar.Margin = new System.Windows.Forms.Padding(2);
             this.btncambiar.Name = "btncambiar";
             this.btncambiar.Size = new System.Drawing.Size(94, 25);
             this.btncambiar.TabIndex = 21;
@@ -145,18 +146,29 @@
             // btnCargar
             // 
             this.btnCargar.Location = new System.Drawing.Point(245, 38);
-            this.btnCargar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCargar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(97, 23);
             this.btnCargar.TabIndex = 22;
             this.btnCargar.Text = "Cargar datos";
             this.btnCargar.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(338, 244);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FormModificarPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 326);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btncambiar);
             this.Controls.Add(this.txtfechaing);
@@ -169,7 +181,7 @@
             this.Controls.Add(this.txtlegajo);
             this.Controls.Add(this.labelnombre);
             this.Controls.Add(this.labellegajo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormModificarPersona";
             this.Text = "FormModificarPersona";
             this.Load += new System.EventHandler(this.FormModificarPersona_Load);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.TextBox txtfechaing;
         private System.Windows.Forms.Button btncambiar;
         private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Button button1;
     }
 }
