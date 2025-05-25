@@ -77,6 +77,10 @@ namespace TemplateTPCorto
 
         private void lstProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lstProducto.SelectedItem != null)
+            {
+                txtCantidad.Text = "1";  // Por defecto, una unidad del producto seleccionado
+            }
 
         }
 
@@ -99,7 +103,7 @@ namespace TemplateTPCorto
 
             foreach (Producto prod in productos)
             {
-                lstProducto.Items.Add(prod.Nombre); // Muestra solo el nombre del producto.
+                lstProducto.Items.Add($"{prod.Nombre} - ${prod.Precio:N2}"); // Agrega nombre y precio con formato
             }
         }
 
@@ -114,6 +118,86 @@ namespace TemplateTPCorto
             {
                 MessageBox.Show("Seleccione una categoría de productos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private decimal subTotal = 0; // Variable para acumular el subtotal
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (lstProducto.SelectedItem != null && !string.IsNullOrWhiteSpace(txtCantidad.Text))
+            {
+                if (int.TryParse(txtCantidad.Text, out int cantidad) && cantidad > 0)
+                {
+                    // Obtener nombre y precio desde lstProducto
+                    string productoSeleccionado = lstProducto.SelectedItem.ToString();
+                    string[] partes = productoSeleccionado.Split('-'); // Separar nombre y precio
+                    string precioStr = partes.Length > 1 ? partes[1].Trim().Replace("$", "") : "0";
+
+                    if (decimal.TryParse(precioStr, out decimal precioUnitario))
+                    {
+                        decimal precioTotal = precioUnitario * cantidad; // Calcular precio total del producto
+                        subTotal += precioTotal; // Sumar al subtotal
+
+                        listBox1.Items.Add($"{productoSeleccionado} - Cantidad: {cantidad} - Total: ${precioTotal:N2}");
+
+                        // Actualizar el subtotal en la UI
+                        lablSubTotal.Text = $"${subTotal:N2}";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al obtener el precio del producto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese una cantidad válida.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un producto y especifique la cantidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                string productoEnLista = listBox1.SelectedItem.ToString();
+                string[] partes = productoEnLista.Split('-'); // Separar nombre, cantidad y total
+                string precioStr = partes.Length > 3 ? partes[3].Trim().Replace("Total: $", "").Trim() : "0";
+
+                if (decimal.TryParse(precioStr, out decimal precioTotal))
+                {
+                    subTotal -= precioTotal; // Restar el precio eliminado
+                    lablSubTotal.Text = $"${subTotal:N2}"; // Actualizar el subtotal en la UI
+                }
+                else
+                {
+                    MessageBox.Show("Error al obtener el precio del producto eliminado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                listBox1.Items.Remove(listBox1.SelectedItem); // Eliminar el producto de la lista
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un producto antes de quitarlo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void lablSubTotal_Click(object sender, EventArgs e)
+        {
 
         }
     }

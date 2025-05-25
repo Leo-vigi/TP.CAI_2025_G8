@@ -78,6 +78,7 @@
             this.btnQuitar.TabIndex = 32;
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // lablSubTotal
             // 
@@ -88,6 +89,7 @@
             this.lablSubTotal.Size = new System.Drawing.Size(13, 13);
             this.lablSubTotal.TabIndex = 30;
             this.lablSubTotal.Text = "0";
+            this.lablSubTotal.Click += new System.EventHandler(this.lablSubTotal_Click);
             // 
             // btnAgregar
             // 
@@ -98,6 +100,7 @@
             this.btnAgregar.TabIndex = 29;
             this.btnAgregar.Text = "Agregar a carrito";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtCantidad
             // 
@@ -106,6 +109,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(76, 20);
             this.txtCantidad.TabIndex = 28;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
             // label5
             // 
@@ -163,6 +167,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(290, 251);
             this.listBox1.TabIndex = 23;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // lstProducto
             // 
