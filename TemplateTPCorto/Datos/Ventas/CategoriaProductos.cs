@@ -9,13 +9,13 @@ namespace Datos
 {
     public class CategoriaProductos
     {
-        String _id;
+        int _id;
         String _detalle;
 
-        public string Id { get => _id; set => _id = value; }
+        public int Id { get => _id; set => _id = value; }
         public string Detalle { get => _detalle; set => _detalle = value; }
 
-        public CategoriaProductos(string id, string detalle)
+        public CategoriaProductos(int id, string detalle)
         {
             _id = id;
             _detalle = detalle;

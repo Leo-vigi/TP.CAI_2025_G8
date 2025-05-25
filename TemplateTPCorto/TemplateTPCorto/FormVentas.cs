@@ -1,6 +1,7 @@
 ﻿using Datos;
 using Datos.Ventas;
 using Negocio;
+using Persistencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,16 +63,58 @@ namespace TemplateTPCorto
         private void btnListarProductos_Click(object sender, EventArgs e)
         {
             VentasNegocio ventasNegocio = new VentasNegocio();
-
+          
 
         }
-    
 
 
 
-         private void btnSalir_Click(object sender, EventArgs e)
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lstProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboCategoriaProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCategoriaProductos.SelectedItem != null)
+            {
+                int idCategoria = ((CategoriaProductos)cboCategoriaProductos.SelectedItem).Id;
+                ListarProductosPorCategoria(idCategoria);
+            }
+
+        }
+
+        private void ListarProductosPorCategoria(int idCategoria)
+        {
+            lstProducto.Items.Clear(); // Limpiar lista antes de cargar nuevos elementos.
+
+            ProductoPersistencia productoPersistencia = new ProductoPersistencia(); // Instancia la clase
+            List<Producto> productos = productoPersistencia.obtenerProductosPorCategoria(idCategoria); // Llamada correcta
+
+            foreach (Producto prod in productos)
+            {
+                lstProducto.Items.Add(prod.Nombre); // Muestra solo el nombre del producto.
+            }
+        }
+
+        private void btnListarProductos_Click_1(object sender, EventArgs e)
+        {
+            if (cboCategoriaProductos.SelectedItem != null)
+            {
+                int idCategoria = ((CategoriaProductos)cboCategoriaProductos.SelectedItem).Id;
+                ListarProductosPorCategoria(idCategoria);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una categoría de productos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
     }
 }

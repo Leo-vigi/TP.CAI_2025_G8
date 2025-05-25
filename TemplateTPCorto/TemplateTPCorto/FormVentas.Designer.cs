@@ -57,6 +57,7 @@
             this.btnListarProductos.TabIndex = 34;
             this.btnListarProductos.Text = "Listar productos";
             this.btnListarProductos.UseVisualStyleBackColor = true;
+            this.btnListarProductos.Click += new System.EventHandler(this.btnListarProductos_Click_1);
             // 
             // btnCargar
             // 
@@ -171,6 +172,7 @@
             this.lstProducto.Name = "lstProducto";
             this.lstProducto.Size = new System.Drawing.Size(339, 212);
             this.lstProducto.TabIndex = 22;
+            this.lstProducto.SelectedIndexChanged += new System.EventHandler(this.lstProducto_SelectedIndexChanged);
             // 
             // cboCategoriaProductos
             // 
