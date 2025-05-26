@@ -152,6 +152,7 @@ namespace TemplateTPCorto
 
                         // Actualizar el subtotal en la UI
                         lablSubTotal.Text = $"${subTotal:N2}";
+                        ActualizarTotal(); // Llama a la función después de modificar el subtotal
                     }
                     else
                     {
@@ -180,8 +181,9 @@ namespace TemplateTPCorto
 
                 if (decimal.TryParse(precioStr, out decimal precioTotal))
                 {
-                    subTotal -= precioTotal; // Restar el precio eliminado
-                    lablSubTotal.Text = $"${subTotal:N2}"; // Actualizar el subtotal en la UI
+                    subTotal -= precioTotal; // Resta el precio eliminado
+                    lablSubTotal.Text = $"${subTotal:N2}"; // Actualiza el subtotal en la UI
+                    ActualizarTotal(); // Llama a la función para recalcular el total
                 }
                 else
                 {
@@ -199,6 +201,18 @@ namespace TemplateTPCorto
         private void lablSubTotal_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ActualizarTotal()
+        {
+            decimal total = subTotal; // Inicialmente, el total es igual al subtotal
+
+            if (subTotal > 1000000) // Si el subtotal supera $1.000.000, aplica 15% de descuento
+            {
+                total = subTotal * 0.85M; // Aplica descuento del 15%
+            }
+
+            lblTotal.Text = $"${total:N2}"; // Actualiza la UI con el monto correcto
         }
     }
 }
