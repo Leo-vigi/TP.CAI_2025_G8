@@ -12,7 +12,7 @@ namespace Persistencia.DataBase
     {
         public static class DatabaseUtils
         {
-            private static readonly string basePath = @"G:\CAI\V11\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
+            private static readonly string basePath = @"G:\CAI\16\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
             //joaco:  G:\CAI\V7\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas
             public static string GetFilePath(string fileName)
             {
