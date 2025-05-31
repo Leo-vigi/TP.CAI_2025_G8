@@ -68,6 +68,7 @@
             this.btnCargar.TabIndex = 33;
             this.btnCargar.Text = "Cargar Venta";
             this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // btnQuitar
             // 

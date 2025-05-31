@@ -2,12 +2,14 @@
 using Datos.Ventas;
 using Negocio;
 using Persistencia;
+using Persistencia.WebService.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -213,6 +215,51 @@ namespace TemplateTPCorto
             }
 
             lblTotal.Text = $"${total:N2}"; // Actualiza la UI con el monto correcto
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            if (cmbClientes.SelectedItem == null || listBox1.Items.Count == 0)
+
+            {
+
+                MessageBox.Show("Seleccione un cliente y al menos un producto antes de procesar la venta.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+
+            }
+
+            Cliente clienteSeleccionado = (Cliente)cmbClientes.SelectedItem;
+
+            Guid idCliente = clienteSeleccionado.Id;
+
+            //  Harcodeamos el GUID del usuario (ID fijo de la API)
+
+            //Guid idUsuario =  Guid.Parse("0cdbc5a5-69d9-4ab8-8cb3-9932ce33f54a");
+
+            List<dynamic> ventas = new List<dynamic>();
+            //  La API espera un solo objeto, así que enviamos una única venta en lugar de una lista
+
+            if (ventas.Count == 0)
+
+            {
+
+                MessageBox.Show("Error: No hay productos para procesar la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+
+            }
+
+            string jsonRequest = JsonConvert.SerializeObject(ventas[0]); // Se envía un solo objeto
+
+            Console.WriteLine($"JSON enviado: {jsonRequest}");
+
+            HttpResponseMessage response = WebHelper.Post("/api/Venta/AgregarVenta", jsonRequest);
+
+            Console.WriteLine($"Código de respuesta: {response.StatusCode}");
+
+            Console.WriteLine($"Mensaje del servidor: {response.Content.ReadAsStringAsync().Result}");
+
         }
     }
 }
