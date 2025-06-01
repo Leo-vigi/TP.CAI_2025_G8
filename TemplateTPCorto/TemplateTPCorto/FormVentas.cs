@@ -1,6 +1,7 @@
 ﻿using Datos;
 using Datos.Ventas;
 using Negocio;
+using Newtonsoft.Json;
 using Persistencia;
 using Persistencia.WebService.Utils;
 using System;
@@ -284,7 +285,15 @@ namespace TemplateTPCorto
             Console.WriteLine($"Código de respuesta: {response.StatusCode}");
             Console.WriteLine($"Mensaje del servidor: {response.Content.ReadAsStringAsync().Result}");
 
-
+            if (response.IsSuccessStatusCode)
+            {
+                string mensajeExito = $"Venta procesada con éxito.\n\nID Cliente: {ventas[0].idCliente}\nID Producto: {ventas[0].idProducto}";
+                MessageBox.Show(mensajeExito, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show($"Error al procesar la venta: {response.Content.ReadAsStringAsync().Result}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }
