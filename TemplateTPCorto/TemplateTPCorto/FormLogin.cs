@@ -69,7 +69,7 @@ namespace TemplateTPCorto
             }
             string resultadoLogin = loginNegocio.IntentarLogin(usuario, password);
 
-            if (resultadoLogin == "PRIMER_LOGIN")
+            if (resultadoLogin == "PRIMER LOGIN")
             {
                 MessageBox.Show("Este es tu primer inicio de sesión. Debes cambiar tu contraseña.", "Primer Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

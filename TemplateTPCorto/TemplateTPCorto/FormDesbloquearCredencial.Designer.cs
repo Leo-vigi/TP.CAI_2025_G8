@@ -41,10 +41,15 @@
             // 
             // btncambiar
             // 
-            this.btncambiar.Location = new System.Drawing.Point(192, 221);
+            this.btncambiar.FlatAppearance.BorderSize = 0;
+            this.btncambiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btncambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncambiar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncambiar.ForeColor = System.Drawing.Color.White;
+            this.btncambiar.Location = new System.Drawing.Point(146, 248);
             this.btncambiar.Margin = new System.Windows.Forms.Padding(2);
             this.btncambiar.Name = "btncambiar";
-            this.btncambiar.Size = new System.Drawing.Size(91, 22);
+            this.btncambiar.Size = new System.Drawing.Size(95, 33);
             this.btncambiar.TabIndex = 0;
             this.btncambiar.Text = "Cambiar";
             this.btncambiar.UseVisualStyleBackColor = true;
@@ -52,16 +57,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 33);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(142, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.Size = new System.Drawing.Size(138, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Legajo:";
+            this.label1.Text = "Introduzca legajo";
             // 
             // txtlegajo
             // 
-            this.txtlegajo.Location = new System.Drawing.Point(101, 32);
+            this.txtlegajo.Location = new System.Drawing.Point(300, 49);
             this.txtlegajo.Margin = new System.Windows.Forms.Padding(2);
             this.txtlegajo.Name = "txtlegajo";
             this.txtlegajo.Size = new System.Drawing.Size(85, 20);
@@ -70,26 +77,30 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 103);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(145, 145);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(146, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Contraseña actual:";
+            this.label2.Text = "Contraseña actual";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 133);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(143, 195);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.Size = new System.Drawing.Size(147, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Nueva contraseña:";
+            this.label3.Text = "Nueva contraseña";
             // 
             // txtnueva
             // 
-            this.txtnueva.Location = new System.Drawing.Point(162, 133);
+            this.txtnueva.Location = new System.Drawing.Point(300, 195);
             this.txtnueva.Margin = new System.Windows.Forms.Padding(2);
             this.txtnueva.Name = "txtnueva";
             this.txtnueva.Size = new System.Drawing.Size(85, 20);
@@ -97,7 +108,7 @@
             // 
             // txtvieja
             // 
-            this.txtvieja.Location = new System.Drawing.Point(162, 99);
+            this.txtvieja.Location = new System.Drawing.Point(300, 147);
             this.txtvieja.Margin = new System.Windows.Forms.Padding(2);
             this.txtvieja.Name = "txtvieja";
             this.txtvieja.Size = new System.Drawing.Size(85, 20);
@@ -105,19 +116,29 @@
             // 
             // btncargar
             // 
-            this.btncargar.Location = new System.Drawing.Point(253, 32);
+            this.btncargar.FlatAppearance.BorderSize = 0;
+            this.btncargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btncargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncargar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncargar.ForeColor = System.Drawing.Color.White;
+            this.btncargar.Location = new System.Drawing.Point(146, 91);
             this.btncargar.Margin = new System.Windows.Forms.Padding(2);
             this.btncargar.Name = "btncargar";
-            this.btncargar.Size = new System.Drawing.Size(86, 21);
+            this.btncargar.Size = new System.Drawing.Size(239, 34);
             this.btncargar.TabIndex = 7;
             this.btncargar.Text = "Cargar datos";
             this.btncargar.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(313, 221);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(300, 248);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(85, 32);
             this.button1.TabIndex = 8;
             this.button1.Text = "Volver";
             this.button1.UseVisualStyleBackColor = true;
@@ -127,6 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btncargar);
@@ -139,7 +161,7 @@
             this.Controls.Add(this.btncambiar);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormDesbloquearcredencial";
-            this.Text = "FormDesbloquearcredencial";
+            this.Text = "Desbloquear credencial";
             this.Load += new System.EventHandler(this.FormDesbloquearcredencial_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

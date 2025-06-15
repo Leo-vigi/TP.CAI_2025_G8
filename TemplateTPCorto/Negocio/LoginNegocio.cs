@@ -57,7 +57,7 @@ namespace Negocio
 
             //  Verifica si es el primer login y permite acceso
             if (credencial.FechaUltimoLogin == DateTime.MinValue)
-                return "PRIMER_LOGIN";
+                return "PRIMER LOGIN";
 
             if (credencial.ContrasenaExpirada())
                 return "FORZAR_CAMBIO_CONTRASEÑA";

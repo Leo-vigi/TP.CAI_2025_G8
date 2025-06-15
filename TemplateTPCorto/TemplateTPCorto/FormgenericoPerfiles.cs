@@ -103,6 +103,16 @@ namespace TemplateTPCorto
         {
             this.Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPerfil_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

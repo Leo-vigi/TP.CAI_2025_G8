@@ -117,6 +117,11 @@ namespace TemplateTPCorto
         {
             this.Hide();
         }
+
+        private void labelfechaingreso_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
