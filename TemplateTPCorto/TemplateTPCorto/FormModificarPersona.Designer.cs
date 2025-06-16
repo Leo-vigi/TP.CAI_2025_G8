@@ -45,18 +45,16 @@
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(345, 129);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtnombre.Location = new System.Drawing.Point(518, 198);
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(119, 20);
+            this.txtnombre.Size = new System.Drawing.Size(176, 26);
             this.txtnombre.TabIndex = 14;
             // 
             // txtlegajo
             // 
-            this.txtlegajo.Location = new System.Drawing.Point(367, 33);
-            this.txtlegajo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtlegajo.Location = new System.Drawing.Point(550, 51);
             this.txtlegajo.Name = "txtlegajo";
-            this.txtlegajo.Size = new System.Drawing.Size(97, 20);
+            this.txtlegajo.Size = new System.Drawing.Size(144, 26);
             this.txtlegajo.TabIndex = 13;
             // 
             // labelnombre
@@ -64,10 +62,9 @@
             this.labelnombre.AutoSize = true;
             this.labelnombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelnombre.ForeColor = System.Drawing.Color.White;
-            this.labelnombre.Location = new System.Drawing.Point(225, 132);
-            this.labelnombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelnombre.Location = new System.Drawing.Point(338, 203);
             this.labelnombre.Name = "labelnombre";
-            this.labelnombre.Size = new System.Drawing.Size(68, 20);
+            this.labelnombre.Size = new System.Drawing.Size(104, 27);
             this.labelnombre.TabIndex = 12;
             this.labelnombre.Text = "Nombre";
             // 
@@ -76,10 +73,9 @@
             this.labellegajo.AutoSize = true;
             this.labellegajo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labellegajo.ForeColor = System.Drawing.Color.White;
-            this.labellegajo.Location = new System.Drawing.Point(186, 33);
-            this.labellegajo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labellegajo.Location = new System.Drawing.Point(279, 51);
             this.labellegajo.Name = "labellegajo";
-            this.labellegajo.Size = new System.Drawing.Size(160, 20);
+            this.labellegajo.Size = new System.Drawing.Size(245, 27);
             this.labellegajo.TabIndex = 11;
             this.labellegajo.Text = "Introduzca un legajo";
             // 
@@ -88,10 +84,9 @@
             this.labelapellido.AutoSize = true;
             this.labelapellido.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelapellido.ForeColor = System.Drawing.Color.White;
-            this.labelapellido.Location = new System.Drawing.Point(225, 171);
-            this.labelapellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelapellido.Location = new System.Drawing.Point(338, 263);
             this.labelapellido.Name = "labelapellido";
-            this.labelapellido.Size = new System.Drawing.Size(69, 20);
+            this.labelapellido.Size = new System.Drawing.Size(109, 27);
             this.labelapellido.TabIndex = 15;
             this.labelapellido.Text = "Apellido";
             // 
@@ -100,10 +95,9 @@
             this.labeldni.AutoSize = true;
             this.labeldni.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeldni.ForeColor = System.Drawing.Color.White;
-            this.labeldni.Location = new System.Drawing.Point(225, 204);
-            this.labeldni.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labeldni.Location = new System.Drawing.Point(338, 314);
             this.labeldni.Name = "labeldni";
-            this.labeldni.Size = new System.Drawing.Size(36, 20);
+            this.labeldni.Size = new System.Drawing.Size(52, 27);
             this.labeldni.TabIndex = 16;
             this.labeldni.Text = "DNI";
             // 
@@ -112,89 +106,87 @@
             this.labelfechaingreso.AutoSize = true;
             this.labelfechaingreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelfechaingreso.ForeColor = System.Drawing.Color.White;
-            this.labelfechaingreso.Location = new System.Drawing.Point(224, 243);
-            this.labelfechaingreso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelfechaingreso.Location = new System.Drawing.Point(336, 374);
             this.labelfechaingreso.Name = "labelfechaingreso";
-            this.labelfechaingreso.Size = new System.Drawing.Size(112, 20);
+            this.labelfechaingreso.Size = new System.Drawing.Size(170, 27);
             this.labelfechaingreso.TabIndex = 17;
             this.labelfechaingreso.Text = "Fecha ingreso";
             this.labelfechaingreso.Click += new System.EventHandler(this.labelfechaingreso_Click);
             // 
             // txtapellido
             // 
-            this.txtapellido.Location = new System.Drawing.Point(345, 168);
-            this.txtapellido.Margin = new System.Windows.Forms.Padding(2);
+            this.txtapellido.Location = new System.Drawing.Point(518, 258);
             this.txtapellido.Name = "txtapellido";
-            this.txtapellido.Size = new System.Drawing.Size(119, 20);
+            this.txtapellido.Size = new System.Drawing.Size(176, 26);
             this.txtapellido.TabIndex = 18;
             // 
             // txtdni
             // 
-            this.txtdni.Location = new System.Drawing.Point(345, 204);
-            this.txtdni.Margin = new System.Windows.Forms.Padding(2);
+            this.txtdni.Location = new System.Drawing.Point(518, 314);
             this.txtdni.Name = "txtdni";
-            this.txtdni.Size = new System.Drawing.Size(119, 20);
+            this.txtdni.Size = new System.Drawing.Size(176, 26);
             this.txtdni.TabIndex = 19;
             // 
             // txtfechaing
             // 
-            this.txtfechaing.Location = new System.Drawing.Point(345, 243);
-            this.txtfechaing.Margin = new System.Windows.Forms.Padding(2);
+            this.txtfechaing.Location = new System.Drawing.Point(518, 374);
             this.txtfechaing.Name = "txtfechaing";
-            this.txtfechaing.Size = new System.Drawing.Size(119, 20);
+            this.txtfechaing.Size = new System.Drawing.Size(176, 26);
             this.txtfechaing.TabIndex = 20;
             // 
             // btncambiar
             // 
+            this.btncambiar.BackColor = System.Drawing.Color.SlateBlue;
             this.btncambiar.FlatAppearance.BorderSize = 0;
             this.btncambiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btncambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncambiar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncambiar.ForeColor = System.Drawing.Color.White;
-            this.btncambiar.Location = new System.Drawing.Point(203, 289);
-            this.btncambiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btncambiar.Location = new System.Drawing.Point(304, 445);
             this.btncambiar.Name = "btncambiar";
-            this.btncambiar.Size = new System.Drawing.Size(133, 26);
+            this.btncambiar.Size = new System.Drawing.Size(200, 40);
             this.btncambiar.TabIndex = 21;
             this.btncambiar.Text = "Cambiar";
-            this.btncambiar.UseVisualStyleBackColor = true;
+            this.btncambiar.UseVisualStyleBackColor = false;
             // 
             // btnCargar
             // 
+            this.btnCargar.BackColor = System.Drawing.Color.SlateBlue;
             this.btnCargar.FlatAppearance.BorderSize = 0;
             this.btnCargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.ForeColor = System.Drawing.Color.White;
-            this.btnCargar.Location = new System.Drawing.Point(190, 77);
-            this.btnCargar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCargar.Location = new System.Drawing.Point(285, 118);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(274, 29);
+            this.btnCargar.Size = new System.Drawing.Size(411, 45);
             this.btnCargar.TabIndex = 22;
             this.btnCargar.Text = "Cargar datos";
-            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.SlateBlue;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(345, 289);
+            this.button1.Location = new System.Drawing.Point(518, 445);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 25);
+            this.button1.Size = new System.Drawing.Size(178, 38);
             this.button1.TabIndex = 23;
             this.button1.Text = "Volver";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // FormModificarPersona
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(637, 326);
+            this.ClientSize = new System.Drawing.Size(956, 502);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btncambiar);
@@ -208,7 +200,6 @@
             this.Controls.Add(this.txtlegajo);
             this.Controls.Add(this.labelnombre);
             this.Controls.Add(this.labellegajo);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormModificarPersona";
             this.Text = "Modificar Persona";
             this.Load += new System.EventHandler(this.FormModificarPersona_Load);

@@ -12,8 +12,9 @@ namespace Persistencia.DataBase
     {
         public static class DatabaseUtils
         {
-            private static readonly string basePath = @"G:\CAI\17\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
+            private static readonly string basePath = @"C:\Users\Diego\Documents\TP CAI FINAL\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas";
             //joaco:  G:\CAI\V7\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas
+            //leo: C:\Users\Diego\Documents\TP CAI FINAL\TP.CAI_2025_G8\TemplateTPCorto\Persistencia\DataBase\Tablas
             public static string GetFilePath(string fileName)
             {
                 return Path.Combine(basePath, fileName);

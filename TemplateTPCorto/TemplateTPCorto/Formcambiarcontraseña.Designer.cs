@@ -40,34 +40,34 @@
             // 
             // buttonCancelar
             // 
+            this.buttonCancelar.BackColor = System.Drawing.Color.SlateGray;
             this.buttonCancelar.FlatAppearance.BorderSize = 0;
             this.buttonCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelar.Location = new System.Drawing.Point(78, 257);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCancelar.Location = new System.Drawing.Point(117, 395);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(243, 31);
+            this.buttonCancelar.Size = new System.Drawing.Size(364, 48);
             this.buttonCancelar.TabIndex = 0;
             this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.UseVisualStyleBackColor = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttoncambiar
             // 
+            this.buttoncambiar.BackColor = System.Drawing.Color.SlateGray;
             this.buttoncambiar.FlatAppearance.BorderSize = 0;
             this.buttoncambiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttoncambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttoncambiar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttoncambiar.ForeColor = System.Drawing.Color.White;
-            this.buttoncambiar.Location = new System.Drawing.Point(345, 257);
-            this.buttoncambiar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttoncambiar.Location = new System.Drawing.Point(518, 395);
             this.buttoncambiar.Name = "buttoncambiar";
-            this.buttoncambiar.Size = new System.Drawing.Size(254, 31);
+            this.buttoncambiar.Size = new System.Drawing.Size(381, 48);
             this.buttoncambiar.TabIndex = 1;
             this.buttoncambiar.Text = "Aceptar";
-            this.buttoncambiar.UseVisualStyleBackColor = true;
+            this.buttoncambiar.UseVisualStyleBackColor = false;
             this.buttoncambiar.Click += new System.EventHandler(this.buttoncambiar_Click);
             // 
             // Contraseñaactual
@@ -75,10 +75,9 @@
             this.Contraseñaactual.AutoSize = true;
             this.Contraseñaactual.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contraseñaactual.ForeColor = System.Drawing.Color.White;
-            this.Contraseñaactual.Location = new System.Drawing.Point(74, 100);
-            this.Contraseñaactual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Contraseñaactual.Location = new System.Drawing.Point(111, 154);
             this.Contraseñaactual.Name = "Contraseñaactual";
-            this.Contraseñaactual.Size = new System.Drawing.Size(222, 20);
+            this.Contraseñaactual.Size = new System.Drawing.Size(338, 27);
             this.Contraseñaactual.TabIndex = 2;
             this.Contraseñaactual.Text = "Ingrese su contraseña actual";
             // 
@@ -87,10 +86,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(74, 133);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(111, 205);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(247, 20);
+            this.label2.Size = new System.Drawing.Size(377, 27);
             this.label2.TabIndex = 3;
             this.label2.Text = "Introduzca su nueva contraseña";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -100,44 +98,40 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(74, 165);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(111, 254);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(215, 20);
+            this.label3.Size = new System.Drawing.Size(331, 27);
             this.label3.TabIndex = 4;
             this.label3.Text = "Repita su nueva contraseña";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBoxContraactual
             // 
-            this.textBoxContraactual.Location = new System.Drawing.Point(345, 100);
-            this.textBoxContraactual.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxContraactual.Location = new System.Drawing.Point(518, 154);
             this.textBoxContraactual.Name = "textBoxContraactual";
-            this.textBoxContraactual.Size = new System.Drawing.Size(254, 20);
+            this.textBoxContraactual.Size = new System.Drawing.Size(379, 26);
             this.textBoxContraactual.TabIndex = 5;
             // 
             // textBoxcontranueva
             // 
-            this.textBoxcontranueva.Location = new System.Drawing.Point(345, 133);
-            this.textBoxcontranueva.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxcontranueva.Location = new System.Drawing.Point(518, 205);
             this.textBoxcontranueva.Name = "textBoxcontranueva";
-            this.textBoxcontranueva.Size = new System.Drawing.Size(254, 20);
+            this.textBoxcontranueva.Size = new System.Drawing.Size(379, 26);
             this.textBoxcontranueva.TabIndex = 6;
             // 
             // textBoxrepetircontra
             // 
-            this.textBoxrepetircontra.Location = new System.Drawing.Point(345, 165);
-            this.textBoxrepetircontra.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxrepetircontra.Location = new System.Drawing.Point(518, 254);
             this.textBoxrepetircontra.Name = "textBoxrepetircontra";
-            this.textBoxrepetircontra.Size = new System.Drawing.Size(254, 20);
+            this.textBoxrepetircontra.Size = new System.Drawing.Size(379, 26);
             this.textBoxrepetircontra.TabIndex = 7;
             // 
             // Formcambiarcontraseña
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(669, 372);
+            this.ClientSize = new System.Drawing.Size(1004, 572);
             this.Controls.Add(this.textBoxrepetircontra);
             this.Controls.Add(this.textBoxcontranueva);
             this.Controls.Add(this.textBoxContraactual);
@@ -146,7 +140,6 @@
             this.Controls.Add(this.Contraseñaactual);
             this.Controls.Add(this.buttoncambiar);
             this.Controls.Add(this.buttonCancelar);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Formcambiarcontraseña";
             this.Text = "Cambio de Contraseña";
             this.Load += new System.EventHandler(this.Formcambiarcontraseña_Load);
