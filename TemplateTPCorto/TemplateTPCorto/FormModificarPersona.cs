@@ -100,7 +100,7 @@ namespace TemplateTPCorto
                 }
 
                 Console.WriteLine($" Solicitud registrada: {nuevaOperacion}");
-                MessageBox.Show(" Solicitud registrada en operacion_cambio_persona.csv.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(" Solicitud de cambio registrada ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
